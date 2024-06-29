@@ -1,0 +1,41 @@
+/* NavBar Styles */
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 44px;
+    list-style: none;
+    background-color: rgba(22, 22, 23, .8);
+    margin: 0;
+    padding: 0 94px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-menu a {
+    font-size: 12px;
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.8);
+    text-decoration: none;
+
+    &:hover {
+        color: hsla(0, 0%, 100%, 1.8);
+    }
+
+    &:focus {
+        border: 2px solid dodgerblue;
+        outline: none;
+        padding: 2px;
+    }
+
+    & .bi {
+        font-size: 16px;
+    }
+}

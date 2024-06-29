@@ -9,22 +9,15 @@
 
 @font-face {
     font-family: 'SFProText';
-    src: url("./assets/") format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SFProText';
-    src: url('/fonts/SFProText-Bold.ttf') format('truetype');
+    src: url("/fonts/SFProText-Bold.ttf") format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SFProText';
-    src: url('/fonts/SFProText-Italic.ttf') format('truetype');
-    font-weight: normal;
+    src: url('/fonts/SFProText-LightItalic.ttf') format('truetype');
+    font-weight: light;
     font-style: italic;
 }
 
@@ -35,204 +28,21 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'SFProText';
+    src: url('/fonts/SFProText-MediumItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Layouts */
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'SFProText', sans-serif;
     width: 100%;
-}
-
-.nav-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 44px;
-    list-style: none;
-    background-color: rgba(22, 22, 23, .8);
-    margin: 0;
-    padding: 0 94px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.nav-menu a {
-    font-size: 12px;
-    font-weight: 400;
-    color: hsla(0, 0%, 100%, 0.8);
-    text-decoration: none;
-
-    &:hover {
-        color: hsla(0, 0%, 100%, 1.8);
-    }
-
-    &:focus {
-        border: 2px solid dodgerblue;
-        outline: none;
-        padding: 2px;
-    }
-
-    & .bi {
-        font-size: 16px;
-    }
-}
-
-.bi-cart {
-    position: relative;
-}
-
-.notification {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 8px;
-    right: 182px;
-    z-index: 1;
-    width: 10px;
-    height: 10px;
-    font-size: 10px;
-    background-color: darkred;
-    color: white;
-    border-radius: 50%;
-    padding: 3px;
-}
-
-main {
-    background-color: black;
-    color: white;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-    max-height: 100vh;
-    z-index: 3;
-    overflow: hidden;
-
-    & h1 {
-        font-size: 52px;
-        margin: 0;
-        margin-top: 82px;
-        margin-bottom: 2px;
-    }
-
-    & h2{
-        font-size: 30px;
-        margin: 0;
-    }
-}
-
-article img {
-    max-height: 336px;
-}
-
-#store-article,
-#iPad-article {
-    & h1 {
-        font-size: 52px;
-        margin: 0;
-    }
-
-    & h2{
-        font-size: 30px;
-        margin: 0;
-    }
-}
-
-#iPhone-img {
-    object-fit: cover;
-    object-position: top;
-    width: 684px;
-}
-
-#store-article {
-    min-height: 100vh;
-    max-height: 100vh;
-    background-color: #F5F5F7;
-    color: black;
-}
-
-#iPad-article {
-    
-    & h1 {
-        margin-top: 32px;
-        margin-bottom: 24px;
-    }
-
-    & img {
-        object-fit: cover;
-        object-position: top;    
-        width: 684px;
-    }
-
-    & button {
-        margin-top: 24px;
-        margin-bottom: 48px;
-    } 
-}
-
-.button-box,
-.img-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-}
-
-.button-box button,
-.shop-button {
-    min-width: 28px;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.17648;
-    letter-spacing: -.022em;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
-    margin-top: 12px;
-    cursor: pointer;
-    transition: all 0.2 ease;
-}
-
-.learn-more-button {
-    background-color: hsl(210, 100%, 45%);
-    color: white;
-    
-    &:hover {
-        background-color: hsl(210, 100%, 50%);
-    }
-}
-
-.buy-button,
-.shop-button {
-    background-color: transparent;
-    color: #0071E3;
-    border: 1px solid #0071E3 !important;
-
-    &:hover {
-        background-color: #0071E3;
-        color: white;
-    }
-}
-
-#categories-section {
-    min-height: 100vh;
-    max-height: 100vh;
-    background-color: white;
-    color: black;
-    padding: 60px 120px;
 }
 
 footer {

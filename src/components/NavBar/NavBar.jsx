@@ -1,3 +1,5 @@
+import "./NavBar.css"
+import Cart from "../cartWidget/CartWidget"
 
 const NavBar = () => {
 
@@ -25,13 +27,10 @@ const NavBar = () => {
                 <li>
                     <a href="#">Accessories</a>
                 </li>
-                <li>
-                    <a href="#"><i className="bi bi-cart"></i></a>
-                    <span className="notification">1</span>
-                </li>
+                <Cart />
             </ul>
         </nav>
     );
 }
 
-export default NavBar
+export default NavBar;
