@@ -1,4 +1,4 @@
-
+import { PropTypes } from "prop-types";
 
 const ItemList = ({ arrayProducts, category }) => {
 
@@ -15,5 +15,14 @@ const ItemList = ({ arrayProducts, category }) => {
         </>
     );
 }
+
+ItemList.propTypes = {
+    category: PropTypes.string,
+    arrayProducts: PropTypes.arrayOf(PropTypes.shape({  
+        id: PropTypes.number.isRequired, 
+        category: PropTypes.string.isRequired,
+    })).isRequired
+}
+
 
 export default ItemList;
