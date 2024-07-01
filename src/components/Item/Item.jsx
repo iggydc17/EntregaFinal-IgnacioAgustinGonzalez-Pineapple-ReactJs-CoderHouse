@@ -1,0 +1,1 @@
+/* This component will be for each Item detail*/

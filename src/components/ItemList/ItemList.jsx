@@ -1,16 +1,23 @@
 import { PropTypes } from "prop-types";
+import './ItemList.css';
 
 const ItemList = ({ arrayProducts, category }) => {
 
     const emptyMessage = "Empty List - Will be updated soon";
 
-    const productList = arrayProducts.map(category => (
-        <li key={category.id}> {category.category} </li>
-    ));
+    const productList = arrayProducts.map((category, index) => {
+        <li key={index}>
+            {category}
+        </li>
+    });
 
     return(
         <>
-            <h2 className="list-category">{category}</h2>
+            <h2 className="list-category">
+                <a href="#">
+                    {category}
+                </a>
+            </h2>
             <ul className="list-items">{arrayProducts.length === 0 ? emptyMessage : productList} </ul>
         </>
     );

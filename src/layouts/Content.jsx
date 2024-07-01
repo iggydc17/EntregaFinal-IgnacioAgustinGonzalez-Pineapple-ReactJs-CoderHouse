@@ -1,4 +1,4 @@
-import ItemList from "../components/ItemList/ItemList";
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 import "./Content.css"
 
 const Content = () => {
@@ -36,11 +36,7 @@ const Content = () => {
 
             <section id="categories-section">
                 <h1>Categories:</h1>
-                <ItemList arrayProducts={[]} category="Mac" />
-                <ItemList arrayProducts={[]} category="iPad" />
-                <ItemList arrayProducts={[]} category="iPhone" />
-                <ItemList arrayProducts={[]} category="AirPods" />
-                <ItemList arrayProducts={[]} category="Accessories" />
+                <ItemListContainer />
             </section>
         </main>
     );

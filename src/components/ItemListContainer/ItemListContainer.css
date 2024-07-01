@@ -1,0 +1,19 @@
+/* List's container*/
+
+#categories-section {
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: white;
+    color: black;
+    padding: 60px 176px;
+
+    & h1 {
+        font-size: 32px;
+        margin-bottom: 70px;
+    }
+
+    & h2 {
+        margin-top: 24px;
+        margin-bottom: -6px;
+    }
+}
