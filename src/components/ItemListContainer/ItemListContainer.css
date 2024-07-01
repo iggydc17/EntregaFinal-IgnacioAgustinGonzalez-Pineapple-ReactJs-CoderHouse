@@ -5,15 +5,29 @@
     max-height: 100vh;
     background-color: white;
     color: black;
-    padding: 60px 176px;
+    padding: 0px 176px;
 
     & h1 {
-        font-size: 32px;
-        margin-bottom: 70px;
+        font-size: 52px;
+        text-align: center;
+        padding-top: 100px;
+        margin-bottom: 140px;
     }
 
     & h2 {
         margin-top: 24px;
         margin-bottom: -6px;
+    }
+}
+
+.item-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & img {
+        width: 120px;
+        height: 78px;
     }
 }

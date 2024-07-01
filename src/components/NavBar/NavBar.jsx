@@ -25,7 +25,7 @@ const NavBar = () => {
                     <a href="#">AirPods</a>
                 </li>
                 <li>
-                    <a href="#">Accessories</a>
+                    <a href="#">Vision</a>
                 </li>
                 <Cart />
             </ul>

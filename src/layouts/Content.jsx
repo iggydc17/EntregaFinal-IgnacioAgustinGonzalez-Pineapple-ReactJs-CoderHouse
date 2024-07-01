@@ -35,7 +35,6 @@ const Content = () => {
             </section>
 
             <section id="categories-section">
-                <h1>Categories:</h1>
                 <ItemListContainer />
             </section>
         </main>
