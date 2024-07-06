@@ -1,39 +1,21 @@
-import "./NavBar.css"
+import { appleCategories } from "../../data/asyncMockProducts";
+import NavBarButton from "../NavBarButton/NavBarButton";
 import Cart from "../cartWidget/CartWidget"
-import { useEffect, useState } from "react";
+import "./NavBar.css"
+
 
 const NavBar = () => {
-
-    const [category, setCategory] = useState("");
-
-    useEffect(() => {
-        
-    }, [category]);
-
     return (
         <nav>
             <ul className="nav-menu">
                 <li>
                     <a href="#"><i className="bi bi-apple"></i></a>
                 </li>
-                <li>
-                    <a href="#">Store</a>
-                </li>
-                <li>
-                    <a href="#">Mac</a>
-                </li>
-                <li>
-                    <a href="#">iPad</a>
-                </li>
-                <li>
-                    <a href="#">iPhone</a>
-                </li>
-                <li>
-                    <a href="#">AirPods</a>
-                </li>
-                <li>
-                    <a href="#">Vision</a>
-                </li>
+                {appleCategories.map((category, index) => (
+                    <li key={index}>
+                        <NavBarButton category={category} />
+                    </li>
+                ))}
                 <Cart />
             </ul>
         </nav>

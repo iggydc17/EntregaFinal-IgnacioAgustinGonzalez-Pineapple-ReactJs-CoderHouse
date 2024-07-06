@@ -9,7 +9,6 @@ const Content = () => {
             <section id="products-section">
                 <LandingPage />
             </section>
-
             <section id="categories-section">
                 <CategoryListContainer />
             </section>

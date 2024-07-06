@@ -2,7 +2,6 @@ import './Category.css';
 
 const Category = ({ category }) => {
 
-    console.log(category)
     return(
         <div className="category">
             <a href="#" title={category.category}>

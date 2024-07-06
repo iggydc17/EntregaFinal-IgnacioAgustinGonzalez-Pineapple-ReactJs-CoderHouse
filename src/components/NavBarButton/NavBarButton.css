@@ -1,0 +1,20 @@
+.nav-menu a {
+    font-size: 12px;
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.8);
+    text-decoration: none;
+
+    &:hover {
+        color: hsla(0, 0%, 100%, 1.8);
+    }
+
+    &:focus {
+        border: 2px solid dodgerblue;
+        outline: none;
+        padding: 2px;
+    }
+
+    & .bi {
+        font-size: 16px;
+    }
+}
