@@ -6,6 +6,9 @@ const Cart = () => {
 
     const [count, setCount] = useState(11);
     
+    const handleCount = () => {
+        setCount((prevCount) => prevCount + 1);
+    }
 
     return (
         <div id="cart-logo-container">

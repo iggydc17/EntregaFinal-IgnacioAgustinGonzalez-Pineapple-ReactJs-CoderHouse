@@ -5,129 +5,22 @@ main {
     color: white;
 }
 
-article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+#categories-section {
     min-height: 100vh;
     max-height: 100vh;
-    z-index: 3;
-    overflow: hidden;
-
-    & h1 {
-        font-size: 52px;
-        margin: 0;
-        margin-top: 82px;
-        margin-bottom: 2px;
-    }
-
-    & h2{
-        font-size: 30px;
-        font-weight: light;
-        font-style: italic;    
-        margin: 0;
-    }
-}
-
-article img {
-    max-height: 336px;
-}
-
-#store-article,
-#iPad-article {
-    & h1 {
-        font-size: 52px;
-        margin: 0;
-    }
-
-    & h2{
-        font-size: 30px;
-        margin: 0;
-    }
-}
-
-#iPhone-img {
-    object-fit: cover;
-    object-position: top;
-    width: 684px;
-}
-
-#store-article {
-    min-height: 100vh;
-    max-height: 100vh;
-    background-color: #F5F5F7;
+    background-color: white;
     color: black;
+    padding: 0px 176px;
 
     & h1 {
-        margin-bottom: 24px;
-    }
-}
-
-#iPad-article {
-    
-    & h1 {
-        margin-top: 32px;
-        margin-bottom: 24px;
+        font-size: 52px;
+        text-align: center;
+        padding-top: 100px;
+        margin-bottom: 140px;
     }
 
-    & img {
-        object-fit: cover;
-        object-position: top;    
-        width: 684px;
-    }
-
-    & button {
+    & h2 {
         margin-top: 24px;
-        margin-bottom: 48px;
-    } 
-}
-
-.button-box,
-.img-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-}
-
-.button-box button,
-.shop-button {
-    min-width: 28px;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.17648;
-    letter-spacing: -.022em;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
-    margin-top: 12px;
-    cursor: pointer;
-    transition: all 0.2 ease;
-}
-
-.learn-more-button {
-    background-color: hsl(210, 100%, 45%);
-    color: white;
-    
-    &:hover {
-        background-color: hsl(210, 100%, 50%);
+        margin-bottom: -6px;
     }
 }
-
-.buy-button,
-.shop-button {
-    background-color: transparent;
-    color: #0071E3;
-    border: 1px solid #0071E3 !important;
-
-    &:hover {
-        background-color: #0071E3;
-        color: white;
-    }
-}
-
-
-

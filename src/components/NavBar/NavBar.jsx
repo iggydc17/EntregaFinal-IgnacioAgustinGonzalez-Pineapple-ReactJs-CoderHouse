@@ -1,7 +1,14 @@
 import "./NavBar.css"
 import Cart from "../cartWidget/CartWidget"
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
+
+    const [category, setCategory] = useState("");
+
+    useEffect(() => {
+        
+    }, [category]);
 
     return (
         <nav>
