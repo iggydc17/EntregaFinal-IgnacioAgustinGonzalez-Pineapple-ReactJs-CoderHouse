@@ -1,2 +1,11 @@
 /* List's container*/
 
+.loading {
+    text-align: center;
+    line-height: 100vh;
+}
+
+.fetchError {
+    font-weight: bold;
+    color: tomato;
+}

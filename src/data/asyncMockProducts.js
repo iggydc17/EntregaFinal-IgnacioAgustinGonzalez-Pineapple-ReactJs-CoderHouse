@@ -1,5 +1,5 @@
 export const appleProducts = {
-    mac: [
+    Mac: [
         { id: 1, name: 'MacBook Air M1', price: 999, year: 2020, description: 'Lightweight and powerful with M1 chip.', image: 'path_to_macbook_air_m1_image'},
         { id: 2, name: 'MacBook Air M2', price: 1199, year: 2022, description: 'Next generation performance with M2 chip.', image: 'path_to_macbook_air_m2_image'},
         { id: 3, name: 'MacBook Pro 13-inch', price: 1299, year: 2020, description: 'High performance for professionals with M1 chip.', image: 'path_to_macbook_pro_13_image'},
@@ -11,6 +11,7 @@ export const appleProducts = {
         { id: 9, name: 'Mac Studio', price: 1999, year: 2022, description: 'High-performance desktop for creative professionals with M1 Max or M1 Ultra chip.', image: 'path_to_mac_studio_image'},
         { id: 10, name: 'Mac Pro', price: 5999, year: 2019, description: 'Ultimate workstation with Intel Xeon processors and modular design.', image: 'path_to_mac_pro_image'}
     ],
+
     iPad: [
         { id: 1, name: 'iPad Air', price: 599, year: 2020, description: 'Powerful and versatile.', image: 'path_to_ipad_air_image' },
         { id: 2, name: 'iPad Pro 11-inch', price: 799, year: 2021, description: 'Ultimate iPad experience with 11-inch Liquid Retina display.', image: 'path_to_ipad_pro_11_image' },
@@ -18,6 +19,7 @@ export const appleProducts = {
         { id: 4, name: 'iPad Mini', price: 499, year: 2021, description: 'Compact, powerful, and portable.', image: 'path_to_ipad_mini_image' },
         { id: 5, name: 'iPad 10.2-inch', price: 329, year: 2021, description: 'Affordable and powerful.', image: 'path_to_ipad_10_2_image' }
     ],
+
     iPhone: [
         { id: 1, name: 'iPhone 14 Pro Max', price: 1099, year: 2023, description: 'Pro camera system and Super Retina XDR display.', image: 'path_to_iphone_14_pro_max_image' },
         { id: 2, name: 'iPhone 14 Pro', price: 999, year: 2023, description: 'Pro camera system and Super Retina XDR display.', image: 'path_to_iphone_14_pro_image' },
@@ -26,25 +28,22 @@ export const appleProducts = {
         { id: 5, name: 'iPhone 13 Pro Max', price: 1099, year: 2021, description: 'Pro camera system and Super Retina XDR display.', image: 'path_to_iphone_13_pro_max_image' },
         { id: 6, name: 'iPhone 13 Pro', price: 999, year: 2021, description: 'Pro camera system and Super Retina XDR display.', image: 'path_to_iphone_13_pro_image' },
         { id: 7, name: 'iPhone 13', price: 699, year: 2021, description: 'Advanced dual-camera system.', image: 'path_to_iphone_13_image' },
-        { id: 8, name: 'iPhone 12 Mini', price: 699, year: 2020, description: 'Compact and powerful.', image: 'path_to_iphone_12_mini_image' }
+        { id: 8, name: 'iPhone 12 Mini', price: 699, year: 2020, description: 'Compact and powerful.', image: 'path_to_iphone_12_mini_image' },
+        { id: 9, name: 'iPhone 15', price: 999, year: 2024, description: 'A camera that captures your wildest imagination.', image: 'path_to_iphone_12_mini_image' },
+        { id: 10, name: 'iPhone 15 Pro', price: 1200, year: 2024, description: 'Forged in titanium.', image: 'path_to_iphone_12_mini_image' },
+        { id: 11, name: 'iPhone 15 Pro Max', price: 1400, year: 2024, description: 'Game changing chip.', image: 'path_to_iphone_12_mini_image' }
     ],
-    airPods: [
+
+    AirPods: [
         { id: 1, name: 'AirPods Pro', price: 249, year: 2019, description: 'Noise cancellation and superior sound.', image: 'path_to_airpods_pro_image' },
         { id: 2, name: 'AirPods Max', price: 549, year: 2020, description: 'High-fidelity audio.', image: 'path_to_airpods_max_image' },
         { id: 3, name: 'AirPods (3rd generation)', price: 179, year: 2021, description: 'Spatial audio with dynamic head tracking.', image: 'path_to_airpods_3rd_gen_image' }
     ],
-    vision: [
+    
+    Vision: [
         { id: 1, name: 'Apple Vision Pro', price: 3499, year: 2024, description: 'Augmented reality headset.' }
     ]
 };
-
-export const appleCategories = [
-    {category: "Mac", storeImage: '/img/store/store-mac.png'},
-    {category: "iPad", storeImage: '/img/store/store-ipad.png'},
-    {category: "iPhone", storeImage: '/img/store/store-iphone.png'},
-    {category: "Airpods", storeImage: '/img/store/store-airpods.png'},
-    {category: "Vision", storeImage: '/img/store/store-vision.png'}
-]
 
 export const getAppleProducts = () => {
     return new Promise((resolve) => {
@@ -54,10 +53,3 @@ export const getAppleProducts = () => {
     });
 }; 
 
-export const getAppleCategories = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(appleCategories);
-        }, 500);
-    });
-};

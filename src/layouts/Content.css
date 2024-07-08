@@ -17,6 +17,7 @@ main {
         text-align: center;
         padding-top: 100px;
         margin-bottom: 140px;
+        margin-top: 0;
     }
 
     & h2 {

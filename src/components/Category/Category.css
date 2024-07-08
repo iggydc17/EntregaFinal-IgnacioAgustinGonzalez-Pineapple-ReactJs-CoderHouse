@@ -1,4 +1,8 @@
 .category {
+    
+    &:hover {
+        cursor: pointer;
+    }
 
     & a {
         color: black;
