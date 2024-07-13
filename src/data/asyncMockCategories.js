@@ -3,7 +3,8 @@ export const appleCategories = [
     {category: "iPad", storeImage: '/img/store/store-ipad.png'},
     {category: "iPhone", storeImage: '/img/store/store-iphone.png'},
     {category: "Airpods", storeImage: '/img/store/store-airpods.png'},
-    {category: "Vision", storeImage: '/img/store/store-vision.png'}
+    {category: "Vision", storeImage: '/img/store/store-vision.png'},
+    {category: "Accessories", storeImage: '/img/store/store-accessories.png'}
 ]
 
 export const getAppleCategories = () => {

@@ -121,6 +121,7 @@ article img {
     background-color: transparent;
     color: #0071E3;
     border: 1px solid #0071E3 !important;
+    text-decoration: none;
 
     &:hover {
         background-color: #0071E3;

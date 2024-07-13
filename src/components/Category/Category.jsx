@@ -1,15 +1,16 @@
-/* import './Category.css';
+import { Link } from 'react-router-dom';
+import './Category.css';
 
 const Category = ({ category }) => {
 
     return(
         <div className="category" title={category.category}>
-            <a href="#">
+            <Link to="#">
                 <img src={category.storeImage} alt={category.category} />
                 <h4>{category.category}</h4>
-            </a>
+            </Link>
         </div>
     );
 }
 
-export default Category; */
+export default Category; 

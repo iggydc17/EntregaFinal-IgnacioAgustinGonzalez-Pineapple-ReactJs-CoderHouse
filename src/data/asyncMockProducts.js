@@ -14,10 +14,10 @@ export const appleProducts = {
     ],
 
     iPad: [
-        { id: 1, name: 'iPad Air', price: 599, year: 2020, description1: 'Powerful and versatile.', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_air__cr381zljqdiu_large.png' },
-        { id: 2, name: 'iPad Mini', price: 499, year: 2021, description1: 'Compact, powerful, and portable.', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_mini__f3iy3qb50gia_large.png' },
-        { id: 3, name: 'iPad', price: 329, year: 2021, description1: 'Affordable and powerful.', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_10th_gen__ej5p5x6yf2gm_large.png' },
-        { id: 4, name: 'iPad Pro', price: 329, year: 2024, description1: 'Thinpossible', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_pro__6bgrkek0jnm2_large.png' }
+        { id: 1, name: 'iPad Pro', price: 1200, year: 2024, description1: 'Thinpossible', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_pro__6bgrkek0jnm2_large.png' },
+        { id: 2, name: 'iPad', price: 999, year: 2021, description1: 'Affordable and powerful.', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_10th_gen__ej5p5x6yf2gm_large.png' },
+        { id: 3, name: 'iPad Air', price: 900, year: 2020, description1: 'Powerful and versatile.', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_air__cr381zljqdiu_large.png' },
+        { id: 4, name: 'iPad Mini', price: 699, year: 2021, description1: 'Compact, powerful, and portable.', image: 'https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_mini__f3iy3qb50gia_large.png' },
     ],
 
     iPhone: [
@@ -42,6 +42,18 @@ export const appleProducts = {
 
     Vision: [
         { id: 1, name: 'Apple Vision Pro', price: 3499, year: 2024, description1: 'Augmented reality headset.', image: 'https://m.media-amazon.com/images/I/61Rit1LERjL._AC_UF894,1000_QL80_.jpg' }
+    ],
+
+    Accessories: [
+        {id: 1, name: 'PineApple Pencil Pro', price: 129, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MX2D3?wid=532&hei=582&fmt=png-alpha&.v=1713841707336"},
+        {id: 2, name: 'Magic Keyboard for iPad Pro', price: 349, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWR43?wid=532&hei=582&fmt=png-alpha&.v=1713934214856"},
+        {id: 3, name: 'Smart Folio for iPad Pro 13', price: 99, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWK43?wid=532&hei=582&fmt=png-alpha&.v=1713656833377"},
+        {id: 4, name: 'HomePod Midnight', price: 299, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-select-midnight-202210?wid=532&hei=582&fmt=png-alpha&.v=1670557210097"},
+        {id: 5, name: 'Case for iPhone 15 Pro', price: 49, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HR052?wid=532&hei=582&fmt=png-alpha&.v=1692888734736"},
+        {id: 6, name: 'MagSafe Charger', price: 39, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MHXH3?wid=532&hei=582&fmt=png-alpha&.v=1661269793559"},
+        {id: 7, name: 'Magic Keyboard with Touch ID and  Numeric Keypad', price: 199, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMR3?wid=532&hei=582&fmt=png-alpha&.v=1645719947833"},
+        {id: 8, name: 'Magic Mouse', price: 99, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMQ3?wid=532&hei=582&fmt=png-alpha&.v=1645138486301"},
+        {id: 9, name: 'HomePod Mini Blue', price: 99, year: 2024, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110?wid=532&hei=582&fmt=png-alpha&.v=1632925511000"}
     ]
 };
 

@@ -30,12 +30,12 @@ const CategoryListContainer = () => {
     }, []);
 
     return(
-        <div>
+        <div id="category-list-container">
             {isLoading && <p className="loading">Loading categories...</p>}
             {fetchError && <p className="fetchError">{`Error: ${fetchError}`}</p>}
             {!fetchError && !isLoading && (
                 <>
-                    <h1 id="categories-title">Categories</h1>
+                    <h1 className="categories-title">Store. <span className="color-title-span">The best way to buy the<br /> products you love.</span></h1>
                     <CategoryList categories={categories} />
                 </>
             )}

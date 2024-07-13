@@ -11,7 +11,10 @@ const NavBar = () => {
                     <Link to="/"><i className="bi bi-apple"></i></Link>
                 </li>
                 <li>
-                    <Link to={"/Mac"}> Mac </Link>
+                    <Link to={"/store"}> Store </Link>
+                </li>
+                <li>
+                    <Link to={"/mac"}> Mac </Link>
                 </li>
                 <li>
                     <Link to={"/iPad"}> iPad </Link>
@@ -20,10 +23,13 @@ const NavBar = () => {
                     <Link to={"/iPhone"}> iPhone </Link>
                 </li>
                 <li>
-                    <Link to={"/AirPods"}> AirPods </Link>
+                    <Link to={"/airpods"}> AirPods </Link>
                 </li>
                 <li>
-                    <Link to={"/Vision"}> Vision </Link>
+                    <Link to={"/vision"}> Vision </Link>
+                </li>
+                <li>
+                    <Link to={"/accessories"}> Accessories </Link>
                 </li>
                 <Cart />
             </ul>

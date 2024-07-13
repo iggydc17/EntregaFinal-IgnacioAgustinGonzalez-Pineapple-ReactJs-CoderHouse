@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './LandingPage.css'
 
 const LandingPage = () => {
@@ -17,7 +18,7 @@ const LandingPage = () => {
             <article id="store-article">
                 <h1>Buy Mac or iPad for collage!</h1>
                 <img src="img/store.jpeg" alt="Store" />
-                <button className="shop-button">Shop</button>
+                <Link to={"/store"} className="shop-button" >Shop</Link>
             </article>
 
             <article id="iPad-article">
