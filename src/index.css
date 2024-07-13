@@ -45,23 +45,3 @@ body {
     width: 100%;
 }
 
-footer {
-    width: 75%;
-    background-color: #F5F5F7;
-    color: hsl(0, 0%, 52%);
-    padding: 22px 168px;
-}
-
-footer a {
-    font-size: 14px;
-    color: #444445;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-.copy {
-    font-size: 13px;
-}
