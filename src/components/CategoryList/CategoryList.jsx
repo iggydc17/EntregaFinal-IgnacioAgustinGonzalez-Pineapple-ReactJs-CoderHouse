@@ -1,17 +1,15 @@
-import Category from '../Category/Category';
-import './CategoryList.css';
+import './Category.css';
 
-const CategoryList = ({ categories }) => {
-
+const Category = ({ category }) => {
 
     return(
-        <div className='categories-titles'>
-            {categories.map((category, index) => {
-                return (
-                    <Category category={category} key={index} />)
-            })}
+        <div className="category" title={category.category}>
+            <a href="#">
+                <img src={category.storeImage} alt={category.category} />
+                <h4>{category.category}</h4>
+            </a>
         </div>
     );
 }
 
-export default CategoryList;
+export default Category;

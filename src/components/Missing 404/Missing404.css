@@ -1,0 +1,34 @@
+.missing-container {
+    height: 60vh;
+}
+
+.missing {
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 100px auto;
+}
+
+.home-btn {
+    background-color: hsl(210, 100%, 56%);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: hsl(210, 100%, 46%);
+    }
+
+    &:hover {
+        background-color: hsl(210, 100%, 66%);
+    }
+}

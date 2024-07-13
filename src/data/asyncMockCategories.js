@@ -10,6 +10,6 @@ export const getAppleCategories = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(appleCategories);
-        }, 1500);
+        }, 1000);
     });
 };

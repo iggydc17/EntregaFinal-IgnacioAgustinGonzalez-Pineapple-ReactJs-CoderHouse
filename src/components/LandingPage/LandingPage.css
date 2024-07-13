@@ -47,6 +47,12 @@ article img {
     width: 684px;
 }
 
+#iPhone-article,
+#iPad-article {
+    background-color: black;
+    color: white;
+}
+
 #store-article {
     min-height: 100vh;
     max-height: 100vh;

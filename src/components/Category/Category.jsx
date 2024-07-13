@@ -1,4 +1,4 @@
-import './Category.css';
+/* import './Category.css';
 
 const Category = ({ category }) => {
 
@@ -12,4 +12,4 @@ const Category = ({ category }) => {
     );
 }
 
-export default Category;
+export default Category; */

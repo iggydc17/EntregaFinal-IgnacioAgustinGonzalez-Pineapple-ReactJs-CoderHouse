@@ -13,7 +13,7 @@ const Content = () => {
             <section id="categories-section">
                 <CategoryListContainer />
             </section>
-            <section id="products-section">
+            <section id="products-list-section">
                 <ProductDetailContainer /> 
             </section>
         </main>
