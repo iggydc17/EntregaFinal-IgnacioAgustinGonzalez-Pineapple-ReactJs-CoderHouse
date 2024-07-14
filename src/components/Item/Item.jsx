@@ -4,7 +4,7 @@ const Item = ({ item }) => {
     
     return (
         <li className="item" title={item.name}>
-            <Link to={`/${item.category}/${item.id}/`}>
+            <Link to={`/detail/${item.id}/`}>
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
