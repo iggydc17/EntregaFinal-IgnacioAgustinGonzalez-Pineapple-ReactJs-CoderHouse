@@ -14,22 +14,22 @@ const NavBar = () => {
                     <Link to={"/store"}> Store </Link>
                 </li>
                 <li>
-                    <Link to={"/mac"}> Mac </Link>
+                    <Link to={"/category/mac"}> Mac </Link>
                 </li>
                 <li>
-                    <Link to={"/iPad"}> iPad </Link>
+                    <Link to={"/category/ipad"}> iPad </Link>
                 </li>
                 <li>
-                    <Link to={"/iPhone"}> iPhone </Link>
+                    <Link to={"/category/iphone"}> iPhone </Link>
                 </li>
                 <li>
-                    <Link to={"/airpods"}> AirPods </Link>
+                    <Link to={"/category/airpods"}> AirPods </Link>
                 </li>
                 <li>
-                    <Link to={"/vision"}> Vision </Link>
+                    <Link to={"/category/vision"}> Vision </Link>
                 </li>
                 <li>
-                    <Link to={"/accessories"}> Accessories </Link>
+                    <Link to={"/category/accessories"}> Accessories </Link>
                 </li>
                 <Cart />
             </ul>

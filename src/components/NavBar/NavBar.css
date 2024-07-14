@@ -15,28 +15,27 @@
     z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-}
 
-.nav-menu a {
-    font-size: 12px;
-    font-weight: 400;
-    color: hsla(0, 0%, 100%, 0.8);
-    text-decoration: none;
-    cursor: pointer;
-}
+    & a,
+    & i {
+        font-size: 12px;
+        font-weight: 400;
+        color: hsla(0, 0%, 100%, 0.8);
+        text-decoration: none;
+        cursor: pointer;
+        
+        &:hover {
+            color: hsla(0, 0%, 100%, 1.8);
+        }
 
-.nav-menu a:hover {
-    color: hsla(0, 0%, 100%, 1.8);
-}
-
-.nav-menu a:focus {
-    border: 2px solid dodgerblue;
-    outline: none;
-    padding: 2px;
+        &:focus {
+            border: 2px solid dodgerblue;
+            outline: none;
+            padding: 2px;        
+        }
+    }
 }
 
 .nav-menu i {
     font-size: 16px;
-    color: hsla(0, 0%, 100%, 0.8);
-    text-decoration: none;
 }

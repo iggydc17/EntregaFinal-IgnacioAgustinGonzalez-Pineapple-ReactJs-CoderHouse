@@ -5,7 +5,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Missing404 from "./components/Missing 404/Missing404";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Store from "./components/Store/Store";
-//import LandingPage from "./components/LandingPage/LandingPage";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 function App() {
 
@@ -13,9 +13,9 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route exact path="/store" element={<Store />} />
-        {/* <LandingPage /> */}
+        <Route exact path="/category/:category/" element={<ItemListContainer />} />
         <Route path="*" element={<Missing404 />} />
       </Routes>
       <Footer />

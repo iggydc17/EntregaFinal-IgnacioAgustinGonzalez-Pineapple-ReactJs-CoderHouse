@@ -6,31 +6,30 @@ const Footer = () => {
     return (
 
         <footer>
-            <hr />
-            <h5 className="footer-title">Shop And Learn</h5>
+            <h5 className="footer-title">Shop And Discover</h5>
             <div className="footer-navbar">
                 <nav>
                     <ul className="footer-links-list">
                         <li>
-                            <Link to={"/"}>Home</Link>
+                            <Link to={"/"}><i className="bi bi-apple"></i></Link>
                         </li>
                         <li>
                             <Link to={"/store"}>Store</Link>
                         </li>
                         <li>
-                            <Link to={"#"}>Mac</Link>
+                            <Link to={"/category/mac"}>Mac</Link>
                         </li>
                         <li>
-                            <Link to={"#"}>iPad</Link>
+                            <Link to={"/category/ipad"}>iPad</Link>
                         </li>
                         <li>
-                            <Link to={"#"}>iPhone</Link>
+                            <Link to={"/category/iphone"}>iPhone</Link>
                         </li>
                         <li>
-                            <Link to={"#"}>Vision</Link>
+                            <Link to={"/category/vision"}>Vision</Link>
                         </li>
                         <li>
-                            <Link to={"#"}>Accessories</Link>
+                            <Link to={"/category/accessories"}>Accessories</Link>
                         </li>
                     </ul>
                 </nav>
