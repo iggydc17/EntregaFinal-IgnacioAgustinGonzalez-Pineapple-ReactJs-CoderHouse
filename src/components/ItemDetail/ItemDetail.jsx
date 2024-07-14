@@ -1,3 +1,5 @@
+import PropTypes from 'pro-types';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ product }) => {
     return (
@@ -7,9 +9,19 @@ const ItemDetail = ({ product }) => {
             <p>{product.description1}</p>
             <p>${product.price}</p>
             <p>{product.stock}</p>
+            < ItemCount stock={product.stock} />
             <button>{`Buy ${product.name}`}</button>
         </article>
     );
 }
+
+ItemDetail.propTypes = {
+    product: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+    }).isRequired,
+};
 
 export default ItemDetail;

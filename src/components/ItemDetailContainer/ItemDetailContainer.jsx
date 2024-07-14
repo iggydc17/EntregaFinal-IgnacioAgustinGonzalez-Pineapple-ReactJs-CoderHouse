@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProductsById } from "../../data/asyncMockProducts";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
 
@@ -14,15 +15,15 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const fetchProductById = async () => {
             try {
-                const response = await getProductsById(Number(id)); // Asegúrate de que el id sea un número
+                const response = await getProductsById(Number(id));
                 if (response.length > 0) {
-                    setProduct(response[0]); // Asumiendo que getProductsById devuelve un array
+                    setProduct(response[0]); 
                 } else {
-                    setFetchError("Producto no encontrado");
+                    setFetchError("Product not found.");
                 }
                 setFetchError(null);
             } catch (err) {
-                setFetchError(err.message || "Error al obtener el producto");
+                setFetchError(err.message || "Error when obtaining the product");
             } finally {
                 setIsLoading(false);
             }

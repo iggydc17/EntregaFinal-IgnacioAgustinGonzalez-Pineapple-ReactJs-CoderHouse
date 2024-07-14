@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Item = ({ item }) => {
     
@@ -13,5 +14,15 @@ const Item = ({ item }) => {
         </li>
     );
 }
+
+Item.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+    }).isRequired,
+};
 
 export default Item;
