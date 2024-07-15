@@ -1,0 +1,61 @@
+.accessories-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    row-gap: 24px;
+}
+
+.accessory-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 18.41rem;
+    height: 500px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px #00000014;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    & img {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+    }
+
+    & a{
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.new {
+    font-weight: bold;
+    font-size: 13px;
+    color: brown;
+}
+
+.accessory-name {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -.022em;
+    line-height: 1.2353641176;
+    margin-top: -2px;
+    margin-bottom: 32px;
+}
+
+.accessory-price {
+    font-size: 15px;
+    letter-spacing: -.016em;
+    line-height: 1.2857742857;
+    white-space: normal;
+}

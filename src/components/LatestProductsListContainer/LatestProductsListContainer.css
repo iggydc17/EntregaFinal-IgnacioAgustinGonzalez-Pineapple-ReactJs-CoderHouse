@@ -2,12 +2,6 @@
     padding: 20px;
 }
 
-.latest-products-title {
-    font-size: 1.75em;
-    margin-top: 76px;
-    margin-bottom: 48px;
-}
-
 .grid-last-products {
     display: grid;
     grid-template-columns: repeat(2, 400px);

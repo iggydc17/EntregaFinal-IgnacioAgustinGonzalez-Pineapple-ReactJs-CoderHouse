@@ -13,8 +13,19 @@
     line-height: 100vh;
 }
 
-.fetchError {
+.fetch-error {
     font-weight: bold;
     text-align: center;
     color: tomato;
+}
+
+.latest-products-title,
+.accessories-section-title {
+    font-size: 1.75em;
+    margin-top: 76px;
+    margin-bottom: 48px;
+}
+
+.span-title {
+    color: #6E6E73;
 }

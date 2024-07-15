@@ -1,0 +1,46 @@
+.categories-title {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -.003em;
+    line-height: 1.0834933333;
+}
+
+.store-categories {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding: 20px;
+
+    & img {
+        width: 120px;
+        height: 78px;
+        object-fit: contain;
+    }
+
+    & a {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.category-name {
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: -.016em;
+    line-height: 1.4285914286;
+
+}

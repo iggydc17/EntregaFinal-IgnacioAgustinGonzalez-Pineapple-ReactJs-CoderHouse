@@ -31,10 +31,10 @@ const LatestProductsListContainer = () => {
     return (
         <div id="last-products-list-container">
             {isLoading && <p className='loading'>Loading Last Products...</p>}
-            {fetchError && <p className='fetchError' style={{ color: "tomato" }} > {fetchError} </p>}
+            {fetchError && <p className='fetch-error' style={{ color: "tomato" }} > {fetchError} </p>}
             {!fetchError && !isLoading && 
                 <>
-                    <h1 className='latest-products-title'>The latest. <span className='last-products-span'>Take a look at what’s new, right now.</span></h1>
+                    <h1 className='latest-products-title'>The latest. <span className='span-title'>Take a look at what’s new, right now.</span></h1>
                     <LatesProductsDetail lastProducts={lastProducts} />
                 </>
             }

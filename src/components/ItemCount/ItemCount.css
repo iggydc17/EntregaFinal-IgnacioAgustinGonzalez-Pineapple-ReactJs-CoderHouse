@@ -1,0 +1,12 @@
+.counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 70px;
+}
+
+.count-value {
+    margin: 16px;
+}

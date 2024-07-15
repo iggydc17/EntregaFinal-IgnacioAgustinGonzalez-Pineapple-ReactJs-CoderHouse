@@ -1,4 +1,4 @@
-import PropTypes from 'pro-types';
+import PropTypes from 'prop-types';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ product }) => {
@@ -10,7 +10,7 @@ const ItemDetail = ({ product }) => {
             <p>${product.price}</p>
             <p>{product.stock}</p>
             < ItemCount stock={product.stock} />
-            <button>{`Buy ${product.name}`}</button>
+            <button className='buy-btn'>{`Buy ${product.name}`}</button>
         </article>
     );
 }
