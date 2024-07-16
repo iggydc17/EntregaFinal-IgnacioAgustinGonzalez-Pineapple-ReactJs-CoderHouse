@@ -1,8 +1,5 @@
-
-
 .item-detail-container {
     margin: 86px 96px;
-    border: 1px solid red;
 }
 
 .product-title {
@@ -26,7 +23,7 @@
     align-items: center;
     width: 45rem;
     height: 459px;
-    background-color: #F6F5F8;
+    background-color: hsl(260, 20%, 98%);
     border-radius: 24px;
     margin-bottom: 32px;
 }
@@ -34,6 +31,11 @@
 .product-image {
     width: 200px;
     height: 280px;
+    object-fit: contain;
+}
+
+.product-info-box {
+    padding-left: 24px;
 }
 
 .product-stock {
@@ -41,12 +43,7 @@
     color: #333;
 }
 
-
-
-.technical-details-title {
-    margin: 32px 0px 32px 0px;
-}
-
-.technical-detail {
-    margin-top: 24px;
+.sold-out {
+    color: darkred;
+    font-weight: bold;
 }

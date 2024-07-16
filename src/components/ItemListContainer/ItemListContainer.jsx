@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { getAppleProducts, getProductsByCategory } from '../../data/asyncMockProducts';
+import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import './ItemListContainer.css';
-import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
+    const [sectionTitle, setSectionTitle] = useState("List of products: ");
     const [fetchError, setFetchError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -18,6 +19,7 @@ const ItemListContainer = () => {
                 try {
                     const productsList = await getAppleProducts();
                     setItems(productsList);
+                    setSectionTitle('List of products');
                     setFetchError(null);
                 }
                 catch(error) {
@@ -31,6 +33,7 @@ const ItemListContainer = () => {
                 try {
                     const categoryList = await getProductsByCategory(category);
                     setItems(categoryList);
+                    setSectionTitle(category);
                     setFetchError(null);
                 }
                 catch(error) {
@@ -51,7 +54,7 @@ const ItemListContainer = () => {
             {fetchError && <p className="fetch-error" style={{ color:'tomato' }}>{fetchError}</p>}
             {!fetchError && !isLoading && (
                 <>
-                    <h2 className="section-title">List of products</h2>
+                    <h2 className="section-title">{sectionTitle.charAt(0).toUpperCase() + sectionTitle.slice(1)}</h2>
                     <ItemList items={items} />
                 </>
             )}
