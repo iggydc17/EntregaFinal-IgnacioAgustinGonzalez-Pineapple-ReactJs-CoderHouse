@@ -77,7 +77,7 @@ article img {
         width: 684px;
     }
 
-    & button {
+    & a {
         margin-top: 24px;
         margin-bottom: 48px;
     } 
@@ -92,7 +92,7 @@ article img {
     gap: 18px;
 }
 
-.button-box button,
+.button-box a,
 .shop-button {
     min-width: 28px;
     font-size: 17px;

@@ -31,7 +31,6 @@ const ItemListContainer = () => {
                 try {
                     const categoryList = await getProductsByCategory(category);
                     setItems(categoryList);
-                    console.log(categoryList)
                     setFetchError(null);
                 }
                 catch(error) {
@@ -47,12 +46,12 @@ const ItemListContainer = () => {
     }, [category]);
 
     return (
-        <div>
+        <div className="item-list-container">
             {isLoading && <p className="loading">Loading list of products...</p>}
             {fetchError && <p className="fetch-error" style={{ color:'tomato' }}>{fetchError}</p>}
             {!fetchError && !isLoading && (
                 <>
-                    <h2>List of products</h2>
+                    <h2 className="section-title">List of products</h2>
                     <ItemList items={items} />
                 </>
             )}

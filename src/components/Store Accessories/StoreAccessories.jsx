@@ -14,7 +14,6 @@ const StoreAccessories = () => {
             try {
                 const response = await getProductsByCategory("accessories");
                 setAccessories(response);
-                console.log(response)
                 setFetchError(null);
             }
             catch(error) {

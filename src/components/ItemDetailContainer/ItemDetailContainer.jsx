@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className="item-detail-container">
             {isLoading && <p className="loading">Loading detail product...</p>}
             {fetchError && <p className="fetch-error" style={{ color: 'tomato' }}> {fetchError}</p>}
             {!fetchError && !isLoading && (

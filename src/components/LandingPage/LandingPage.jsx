@@ -9,8 +9,7 @@ const LandingPage = () => {
                 <h2>Our most powerful camera yet.</h2>
                 <h2>Ultrafast chips. And USB-C.</h2>
                 <div className="button-box">
-                    <button className="learn-more-button">Learn More</button>
-                    <button className="buy-button">Buy</button>
+                <Link to={"/detail/15/"} className='buy-button'>Buy</Link>
                 </div>
                 <img id="iPhone-img" src="img/iPhone-pro.jpg" alt="iPhone 15 Pro" />
             </article>
@@ -25,8 +24,7 @@ const LandingPage = () => {
                 <h1>iPad Pro</h1>
                 <h2>Unbelievable thin. Incredible powerful.</h2>
                 <div className="button-box">
-                    <button className="learn-more-button">Learn More</button>
-                    <button className="buy-button">Buy</button>
+                    <Link className='buy-button' to={"/detail/11/"}>Buy</Link>
                 </div>
                     <img src="img/iPad-pro.jpg" alt="iPad Pro" />
             </article>

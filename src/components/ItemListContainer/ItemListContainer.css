@@ -1,7 +1,69 @@
+.item-list-container {
+    margin: 86px 76px;
+}
 
+.section-title {
+    font-size: 80px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 92px;
+}
 
-.item img {
-    width: 180px;
-    height: 300px;
-    object-fit: cover;
+.items-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-left: 0px;
+}
+
+.item {
+    min-width: 373px;
+    height: 478px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    
+    &:hover .item-name {
+        text-decoration: underline;
+    }
+
+    & img {
+        width: 172px;
+        height: 228px;
+        object-fit: contain;
+    }
+
+    & a {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;    
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.item-name {
+    font-size: 28px;
+    line-height: 1.14;
+    letter-spacing: .007em;
+    text-align: center;
+}
+
+.item-description {
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
+    text-align: center;
+}
+
+.item-price {
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
 }

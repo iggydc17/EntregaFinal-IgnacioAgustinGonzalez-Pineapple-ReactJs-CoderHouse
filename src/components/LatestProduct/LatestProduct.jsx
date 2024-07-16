@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 const LatestProduct = ( { lastProduct }) => {
@@ -14,5 +15,15 @@ const LatestProduct = ( { lastProduct }) => {
         </div>
     );
 }
+
+LatestProduct.propTypes = {
+    lastProduct: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        description: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+    }).isRequired,
+};
+
 
 export default LatestProduct;

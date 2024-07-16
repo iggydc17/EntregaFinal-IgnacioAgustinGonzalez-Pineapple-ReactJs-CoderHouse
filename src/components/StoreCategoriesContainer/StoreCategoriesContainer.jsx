@@ -15,7 +15,6 @@ const StoreCategoriesContainer = () => {
             try {
                 const response = await getCategories();
                 setCategories(response);
-                console.log(response)
                 setFetchError(null);
             }
             catch(err) {
