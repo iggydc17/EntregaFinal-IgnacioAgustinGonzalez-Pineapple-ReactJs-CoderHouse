@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
-import { getAppleProducts, getProductsByCategory } from '../../data/asyncMockProducts';
-import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
+import CategoriesVideosList from "../CategoriesVideosList/CategoriesVideosList";
+import { getAppleProducts, getProductsByCategory } from '../../data/asyncMockProducts';
+import { getCategoriesVideos } from "../../data/asyncMockCategoriesVideos";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const [sectionTitle, setSectionTitle] = useState("List of products: ");
+    const [videos, setVideos] = useState([]);
     const [fetchError, setFetchError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -15,6 +18,7 @@ const ItemListContainer = () => {
     
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             if (!category) {
                 try {
                     const productsList = await getAppleProducts();
@@ -23,7 +27,7 @@ const ItemListContainer = () => {
                     setFetchError(null);
                 }
                 catch(error) {
-                    setFetchError(error);
+                    setFetchError(error.message);
                 }
                 finally {
                     setIsLoading(false);
@@ -32,12 +36,14 @@ const ItemListContainer = () => {
             else {
                 try {
                     const categoryList = await getProductsByCategory(category);
+                    const categoryVideos = await getCategoriesVideos(category);
                     setItems(categoryList);
                     setSectionTitle(category);
+                    setVideos(categoryVideos);
                     setFetchError(null);
                 }
                 catch(error) {
-                    setFetchError(error);
+                    setFetchError(error.message);
                 }
                 finally {
                     setIsLoading(false);
@@ -55,6 +61,7 @@ const ItemListContainer = () => {
             {!fetchError && !isLoading && (
                 <>
                     <h2 className="section-title">{sectionTitle.charAt(0).toUpperCase() + sectionTitle.slice(1)}</h2>
+                    <CategoriesVideosList videos={videos} />
                     <ItemList items={items} />
                 </>
             )}
