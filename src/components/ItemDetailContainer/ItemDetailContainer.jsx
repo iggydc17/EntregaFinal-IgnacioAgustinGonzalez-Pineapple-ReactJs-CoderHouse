@@ -38,7 +38,7 @@ const ItemDetailContainer = () => {
             {fetchError && <p className="fetch-error" style={{ color: 'tomato' }}> {fetchError}</p>}
             {!fetchError && !isLoading && (
                 <>
-                    <ItemDetail product={product} />
+                    <ItemDetail {...product} />
                 </>
             )}
         </div>

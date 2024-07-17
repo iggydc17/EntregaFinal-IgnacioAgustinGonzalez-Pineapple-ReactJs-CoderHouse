@@ -22,20 +22,24 @@
     justify-content: center;
     align-items: center;
     width: 45rem;
-    height: 459px;
-    background-color: hsl(260, 20%, 98%);
+    height: auto;
     border-radius: 24px;
     margin-bottom: 32px;
 }
 
 .product-image {
-    width: 200px;
-    height: 280px;
+    width: 300px;
+    height: 380px;
     object-fit: contain;
 }
 
 .product-info-box {
     padding-left: 24px;
+}
+
+.product-description {
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .product-stock {

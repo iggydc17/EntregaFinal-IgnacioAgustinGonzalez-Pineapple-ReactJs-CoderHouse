@@ -1,14 +1,14 @@
+import PropTypes from 'prop-types';
 import './TechnicalDetailsContainer.css';
 
 
-const TechnicalDetailsContainer = ({ product }) => {
-
+const TechnicalDetailsContainer = ({ technicalDetails }) => {
 
     return (
         <div className="technical-details">
             <h2 className='technical-details-title'>Technical Details</h2>
             <ul>
-                {Object.entries(product.technicalDetails).map(([key, value]) => (
+                {Object.entries(technicalDetails).map(([key, value]) => (
                     <li key={key} className='technical-detail'>
                         <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value}
                     </li>
@@ -17,5 +17,14 @@ const TechnicalDetailsContainer = ({ product }) => {
         </div>
     );
 }
+
+TechnicalDetailsContainer.propTypes = {
+    technicalDetails: PropTypes.shape({
+        connectivity: PropTypes.string.isRequired,
+        batteryLife: PropTypes.string,
+        weight: PropTypes.string,
+        features: PropTypes.string.isRequired,
+    }).isRequired,
+};
 
 export default TechnicalDetailsContainer;
