@@ -1,12 +1,13 @@
-.item-list-container {
-    margin: 86px 76px;
-}
-
 .section-title {
     font-size: 80px;
     line-height: 1.05;
     letter-spacing: -0.015em;
     margin-bottom: 92px;
+}
+
+.lineup-title {
+    font-size: 56px;
+    margin-bottom: 70px;
 }
 
 .items-list {

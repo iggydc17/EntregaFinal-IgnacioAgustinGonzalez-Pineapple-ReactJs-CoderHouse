@@ -270,7 +270,7 @@ export const appleProducts = {
             year: 2024, 
             description: "A total powerhouse.", 
             stock: 60, 
-            image: 'https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_15_pro__bpnjhcrxofqu_large.png',
+            image: 'https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_15__fm75iyqlkjau_large.png',
             technicalDetails: {
                 processor: "A17 Pro",
                 memory: "Up to 8GB",

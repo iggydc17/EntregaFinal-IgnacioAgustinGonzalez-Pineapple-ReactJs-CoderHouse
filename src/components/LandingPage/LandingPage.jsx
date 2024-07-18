@@ -2,9 +2,31 @@ import { Link } from 'react-router-dom';
 import './LandingPage.css'
 
 const LandingPage = () => {
+
+    const landingVideo = "https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/foundation/large.mp4";
+
     return (
-        <>
-            <article id="iPhone-article">
+        <main className='landing-page-main'>
+            <div className="landing-video-container">
+                <video className="landing-page-video" muted autoPlay loop role="img">
+                    <source src={landingVideo} alt="Landing Page Vision Pro Video" type='video/mp4' />
+                </video>
+                <div className='vision-text'>
+                    <h1 className='vision-image-fig'>
+                        <figure>
+                            <i className="bi bi-apple"></i>
+                            Vision Pro
+                        </figure>
+                    </h1>
+                    <p className='vision-landing-subtitle'>
+                        You´ve never seen everything like this before.
+                    </p>
+                    <Link to={'/detail/29/'} className='buy-button'>Buy</Link>
+                </div>
+            </div>
+            <div className="articles-container">
+                <section>
+                <article id="iPhone-article">
                 <h1>iPhone 15 Pro</h1>
                 <h2>Our most powerful camera yet.</h2>
                 <h2>Ultrafast chips. And USB-C.</h2>
@@ -28,7 +50,10 @@ const LandingPage = () => {
                 </div>
                     <img src="img/iPad-pro.jpg" alt="iPad Pro" />
             </article>
-        </>
+
+                </section>
+            </div>
+        </main>
     );
 }
 

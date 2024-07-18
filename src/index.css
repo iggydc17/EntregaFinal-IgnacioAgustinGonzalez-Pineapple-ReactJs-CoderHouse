@@ -45,3 +45,22 @@ body {
     width: 100%;
 }
 
+.main-page {
+    margin: 50px;
+}
+
+.section-titles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -30px;
+}
+
+.section-second-title {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bolder;
+    line-height: 1.1;
+    letter-spacing: .007em;
+}
