@@ -1,4 +1,28 @@
-article {
+#space-nav {
+    height: 43px;
+    background-color: black;
+}
+
+.landing-page-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.vision-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+}
+
+.vision-image-fig {
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
+
+.landing-article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,10 +46,10 @@ article {
         font-style: italic;    
         margin: 0;
     }
-}
 
-article img {
-    max-height: 336px;
+    & img {
+        max-height: 336px;
+    }
 }
 
 #store-article,
@@ -100,8 +124,6 @@ article img {
     line-height: 1.17648;
     letter-spacing: -.022em;
     border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
     margin-top: 12px;
     cursor: pointer;
     transition: all 0.2 ease;
@@ -120,8 +142,11 @@ article img {
 .shop-button {
     background-color: transparent;
     color: #0071E3;
-    border: 1px solid #0071E3 !important;
     text-decoration: none;
+    border: 1px solid #0071E3 !important;
+    border-radius: 30px;
+    padding: 10px 20px;
+
 
     &:hover {
         background-color: #0071E3;

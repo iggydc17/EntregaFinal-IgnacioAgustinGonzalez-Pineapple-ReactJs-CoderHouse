@@ -1,3 +1,16 @@
+.vision-titles-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 50px 0px 50px;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .vision-image-container {
     display: flex;
@@ -10,7 +23,7 @@
 
 .vision-first-image {
     position: relative;
-    width: 60%;
+    width: 54%;
     height: auto;
     object-fit: contain;
 }
@@ -18,9 +31,430 @@
 .vision-image-text {
     position: absolute;
     bottom: -280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .buy-vision-button {
+        font-size: 28px;
+        font-weight: bold;
+        color: #FF5A00;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .vision-image-fig {
     font-size: 3.65rem;
     letter-spacing: -1px;
+}
+
+.watch-youtube-video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    & h1 {
+        font-size: 46px;
+        line-height: 1.08;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        text-align: center;
+        padding: 30px;
+    }
+
+    & .watch-youtube-video-button {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.21;
+        letter-spacing: .012em;
+        text-decoration: none;
+        background-color: transparent;
+        color: #FF5A00;
+        border: 3px solid #FF5A00;
+        border-radius: 30px;
+        min-width: 30px;
+        padding: 18px 36px;
+        margin-bottom: 180px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #FF5A00;
+            color: white;
+        }
+    }
+}
+
+.category-vision-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.vision-pro-title {
+    font-size: 56px;
+    font-weight: bold;
+    letter-spacing: -.012em;
+    margin-bottom: 180px;
+}
+
+.vision-closer-image {
+    margin-bottom: 180px;
+}
+
+.functionality-section-articles {
+    font-weight: bold;
+
+    & .section-name {
+        text-align: center;
+        padding-top: 150px;
+        margin-bottom: -66px;
+    }
+
+    & .section-title {
+        text-align: center;
+    }
+
+    .articles-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 66px;
+
+        & .box-subtitle {
+            font-size: 31px;
+            line-height: 1.12;
+            font-weight: bold;
+            width: 325px;
+        }
+
+        & .box-p {
+            font-size: 20px;
+            line-height: 1.38;
+            font-weight: bold;
+            color: #86868B;
+            width: 570px;
+            margin-bottom: 80px;
+        }
+    }
+}
+
+.entertainment-container,
+.photos-and-videos-container,
+.apps-category-container,
+.design-container {
+    background-color: #F5F5F7;
+}
+
+.design-titles-box {
+    text-align: center;
+
+    & .typography {
+        width: 735px;
+        font-size: 22px;
+        line-height: 1.33;
+        font-weight: bold;
+        letter-spacing: .009em;
+        text-align: inherit;
+        color: #86868b;
+        margin: 0 auto;
+    }
+}
+
+.super-img-description-container {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    gap: 100px;
+    overflow: hidden;
+    padding: 0px 0px 0px 96px;
+    margin: 20px 0px 0px 90px;
+}
+
+.descriptions-box {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    width: 21rem;
+    margin-top: 140px;
+}
+
+.description-item {
+
+    & .description-p {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: bold;
+        letter-spacing: .011em;
+        color: #86868b;
+        margin: 0;
+    }
+
+    & .description-p-span {
+        font-weight: bold;
+        color: #1D1D1F;
+    }
+}
+
+.image-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-image {
+    transform: translateX(20px);
+}
+
+.front-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.front-image {
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+}
+
+.front-image-figcaption {
+    font-size: 21px;
+    line-height: 1.38;
+    font-weight: 600;
+    color: #86868B;
+    margin-top: 20px;
+
+    & .front-image-description-span {
+        color: #1D1D1F;
+    }
+}
+
+.top-angle-container {
+    margin-top: 120px;
+    text-align: center;
+
+    & p {
+        width: 735px;
+        font-size: 21px;
+        line-height: 1.33;
+        font-weight: bold;
+        text-align: center;
+        color: #86868b;
+        margin: 0 auto;
+        margin-bottom: 120px;
+
+        & .top-angle-span {
+            color: #1D1D1F;
+        }
+    }
+}
+
+.top-angle-img-box {
+    position: relative;
+    display: inline-block;
+}
+
+.top-image {
+    display: block; 
+    margin: 0 auto;
+}
+
+.get-vision-button {
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: hsl(21, 100%, 50%);
+    color: white;
+    border-radius: 30px;
+    min-width: 30px;
+    padding: 18px 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: hsl(21, 100%, 40%);
+    }
+
+    &:active {
+        background-color: hsl(21, 100%, 60%);
+    }
+}
+
+.technology-section {
+    background-color: black;
+    margin-top: -4px;
+
+    & h1,
+    & h3,
+    & span {
+        color: white;
+        text-align: center;
+    }
+
+    & p {
+        color: #86868B;
+    }
+}
+
+.tech-h3 {
+    font-size: 24px;
+    margin-top: 180px;
+    margin-bottom: -40px;
+}
+
+.tech-h1 {
+    font-size: 80px;
+}
+
+.tech-p {
+    width: 46rem;
+    font-size: 23px;
+    line-height: 1.33;
+    font-weight: 600;
+    text-align: center;
+    color: #86868b;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+.tech-h2 {
+    font-size: 31px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+}
+
+.p1 {
+    font-size: 20px;
+    line-height: 1.381002381;
+    font-weight: 600;
+    letter-spacing: .011em;
+}
+
+.front-image-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+
+.front-close-image {
+    display: block;
+    margin: 0 auto; 
+    width: 70%;
+    max-width: 70%;
+    height: auto; 
+}
+
+.spatial-container {
+    position: relative;
+    display: inline-block;
+}
+
+.spatial-image-container {
+    position: relative;
+    margin-bottom: 380px;
+}
+
+.big-image-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.spatial-image {
+    width: 100%;
+    height: auto;
+}
+
+.spatial-text-box {
+    position: absolute;
+    top: 475px;
+    left: 760px;
+    right: 0;
+    bottom: 0;
+    width: 28rem;
+    color: white;
+}
+
+.spatial-h2 {
+    font-size: 32px;
+    line-height: 1.325;
+    font-weight: 700;
+    letter-spacing: .004em;
+    text-align: unset;
+    margin: 0;
+    margin-bottom: 46px;
+}
+
+.spatial-p {
+    font-size: 20px;
+    line-height: 1.381002381;
+    font-weight: 600;
+    letter-spacing: .011em;
+    margin: 0;
+}
+
+.spatial-p span {
+    font-weight: bold;
+}
+
+.angle-h2 {
+    margin-top: 80px;
+}
+
+.angle-p {
+    margin-bottom: 180px;
+}
+
+.chip-h2 {
+    margin-top: -20px;
+}
+
+.dual-chip-container {
+    text-align: center;
+}
+
+.last-vision-buy-button {
+    display: inline-block;
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: transparent;
+    color: #FF5A00;
+    border: 3px solid hsl(21, 100%, 50%);
+    border-radius: 30px;
+    padding: 18px 36px;
+    margin-bottom: 180px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: hsl(21, 100%, 50%);
+        color: white;
+    }
+}
+
+.design-h2 {
+    margin-top: 180px;
+    margin-bottom: -40px;
 }
