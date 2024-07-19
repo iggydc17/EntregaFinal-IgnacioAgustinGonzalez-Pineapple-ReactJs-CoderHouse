@@ -1,4 +1,3 @@
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import { Link } from 'react-router-dom';
 import './Vision.css';
 
@@ -236,7 +235,6 @@ const Vision = () => {
                     </div>
                 </section>
             </div>
-            <ItemListContainer category="vision" />
         </main>
     );
 }

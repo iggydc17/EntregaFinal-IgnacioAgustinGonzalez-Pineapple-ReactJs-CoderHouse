@@ -1,49 +1,91 @@
 /* Footer Styles */
 
 footer {
-    width: 75%;
+    width: 100%;
     background-color: #F5F5F7;
     color: hsl(0, 0%, 52%);
-    padding: 22px 168px;
+    overflow: hidden;
+    height: auto;
+}
 
-    & a {
-        font-size: 14px;
-        color: #444445;
-        text-decoration: none;
-    
-        &:hover {
-            text-decoration: underline;
-        }    
+footer a {
+    font-size: 14px;
+    color: #444445;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
     }
 }
 
 .footer-title {
+    font-size: 18px;
     text-align: center;
     color: #333;
+    padding-top: 16px;
+    margin: 15px;
+}
+
+.footer-navbar {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
 }
 
 .footer-links-list {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
-
+    justify-content: center;
     padding-left: 0;
-    padding: 12px 20px;
-}
-
-ul li {
+    padding: 0 10px;
     list-style-type: none;
+    gap: 52px;
 }
 
 .copy-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .copy {
     font-size: 13px;
-    margin-right: 64px;
+    margin-bottom: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    .footer-links-list {
+        gap: 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-links-list {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-title {
+        font-size: 15px;
+    }
+
+    .footer-links-list {
+        gap: 10px;
+    }
+
+
+    footer a {
+        font-size: 12px;
+    }
+
+    .copy {
+        font-size: 12px;
+        margin-right: 0;
+    }
 }

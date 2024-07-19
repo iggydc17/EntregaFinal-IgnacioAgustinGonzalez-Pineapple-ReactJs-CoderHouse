@@ -1,3 +1,4 @@
+/* General Styles */
 #space-nav {
     height: 43px;
     background-color: black;
@@ -22,6 +23,7 @@
     margin-bottom: -40px;
 }
 
+/* Article Styles */
 .landing-article {
     display: flex;
     flex-direction: column;
@@ -29,46 +31,45 @@
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    max-height: 100vh;
     z-index: 3;
     overflow: hidden;
+}
 
-    & h1 {
-        font-size: 52px;
-        margin: 0;
-        margin-top: 82px;
-        margin-bottom: 2px;
-    }
+.landing-article h1 {
+    font-size: 3.25rem;
+    margin: 0;
+    margin-top: 82px;
+    margin-bottom: 2px;
+    text-align: center;
+}
 
-    & h2{
-        font-size: 30px;
-        font-weight: light;
-        font-style: italic;    
-        margin: 0;
-    }
+.landing-article h2 {
+    font-size: 1.875rem;
+    font-weight: light;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+}
 
-    & img {
-        max-height: 336px;
-    }
+.landing-article img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
 
 #store-article,
 #iPad-article {
-    & h1 {
-        font-size: 52px;
+    h1 {
+        font-size: 3.25rem;
         margin: 0;
+        text-align: center;
     }
 
-    & h2{
-        font-size: 30px;
+    h2 {
+        font-size: 1.875rem;
         margin: 0;
+        text-align: center;
     }
-}
-
-#iPhone-img {
-    object-fit: cover;
-    object-position: top;
-    width: 684px;
 }
 
 #iPhone-article,
@@ -78,35 +79,47 @@
 }
 
 #store-article {
-    min-height: 100vh;
-    max-height: 100vh;
     background-color: #F5F5F7;
     color: black;
 
-    & h1 {
-        margin-bottom: 24px;
+    h1 {
+        margin-top: 50px;
+        margin-bottom: 20px;
     }
+}
+
+.store-image-container {
+    display: inline-block;
+    text-align: center;
+    width: 90%;
 }
 
 #iPad-article {
-    
-    & h1 {
-        margin-top: 32px;
+    h1 {
+        margin-top: 50px;
         margin-bottom: 24px;
     }
 
-    & img {
+    img {
         object-fit: cover;
-        object-position: top;    
-        width: 684px;
+        object-position: top;
+        width: 100%;
+        max-width: 684px;
     }
 
-    & a {
+    a {
         margin-top: 24px;
         margin-bottom: 48px;
-    } 
+    }
 }
 
+.vision-image-fig {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+/* Button Styles */
 .button-box,
 .img-box {
     display: flex;
@@ -114,25 +127,30 @@
     align-items: center;
     justify-content: center;
     gap: 18px;
+    flex-wrap: wrap;
 }
 
 .button-box a,
 .shop-button {
     min-width: 28px;
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.17648;
     letter-spacing: -.022em;
     border: none;
     margin-top: 12px;
     cursor: pointer;
-    transition: all 0.2 ease;
+    transition: all 0.2s ease;
+}
+
+.shop-button {
+    margin-bottom: 20px;
 }
 
 .learn-more-button {
     background-color: hsl(210, 100%, 45%);
     color: white;
-    
+
     &:hover {
         background-color: hsl(210, 100%, 50%);
     }
@@ -147,9 +165,110 @@
     border-radius: 30px;
     padding: 10px 20px;
 
-
     &:hover {
         background-color: #0071E3;
         color: white;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .landing-article h1 {
+        font-size: 2.5rem;
+    }
+
+    .landing-article h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-page-video {
+        height: 60vh;
+    }
+
+    .vision-image-fig {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        font-size: 1rem;
+    }
+
+    .landing-article h1 {
+        font-size: 2rem;
+    }
+
+    .landing-article h2 {
+        font-size: 1.25rem;
+    }
+
+    #store-article h1 {
+        font-size: 2rem;
+    }
+
+    .vision-text-box {
+        margin-bottom: 24px;
+    }
+
+    #iPhone-article h1 {
+        margin-bottom: 15px;
+    }
+
+    .vision-image-fig {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .vision-landing-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .vision-image-fig {
+        font-size: 1rem;
+    }
+
+    #iPad-article h1 {
+        font-size: 2rem;
+    }
+
+    #iPad-article h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-page-video {
+        height: 40vh;
+    }
+
+    .landing-article h1,
+    #store-article h1 {
+        font-size: 1.5rem;
+    }
+
+    .landing-article h2 {
+        font-size: 1rem;
+    }
+
+    .vision-landing-subtitle {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .vision-text-box {
+        margin-bottom: 16px;
+    }
+
+    .vision-text-box h1 {
+        font-size: 1.5rem;
+        margin: 20px;
+    }
+
+    .buy-button,
+    .shop-button {
+        font-size: 0.875rem;
+        padding: 8px 16px;
     }
 }

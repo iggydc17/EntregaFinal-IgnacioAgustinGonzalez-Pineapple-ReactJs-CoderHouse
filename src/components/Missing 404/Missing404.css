@@ -1,10 +1,14 @@
 .missing-container {
     height: 60vh;
+
+    & h3 {
+        margin-bottom: 32px;
+    }
 }
 
 .missing {
-    width: 400px;
-    height: 200px;
+    width: 34%;
+    height: 12rem;
     text-align: center;
     border: 1px solid lightgray;
     border-radius: 8px;
@@ -20,7 +24,6 @@
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
-    margin-top: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -30,5 +33,32 @@
 
     &:hover {
         background-color: hsl(210, 100%, 66%);
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 668px) {
+    h1, h2 {
+        font-size: 1.6rem;
+    }
+
+    .missing {
+        height: 10rem;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 0.5rem;
+    }
+
+    .home-btn {
+        padding: 5px 10px;
+        font-weight: normal;
     }
 }

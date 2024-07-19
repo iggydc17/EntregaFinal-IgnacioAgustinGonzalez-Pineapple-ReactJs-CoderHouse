@@ -14,10 +14,8 @@ const LandingPage = () => {
                 </video>
                 <div className='vision-text-box'>
                     <h1 className='vision-image-fig'>
-                        <figure>
-                            <i className="bi bi-apple"></i>
-                            Vision Pro
-                        </figure>
+                        <i className="bi bi-apple"></i>
+                        Vision Pro
                     </h1>
                     <h2 className='vision-landing-subtitle'>
                         You´ve never seen everything like this before.
@@ -36,8 +34,10 @@ const LandingPage = () => {
                     <img id="iPhone-img" src="img/iPhone-pro.jpg" alt="iPhone 15 Pro" />
                 </article>
                 <article id="store-article" className='landing-article'>
-                    <h1>Buy Mac or iPad for collage!</h1>
-                    <img src="img/store.jpeg" alt="Store" />
+                    <h1 className='store-title'>Buy Mac or iPad for collage!</h1>
+                    <div className="store-image-container">
+                        <img src="img/store.jpeg" alt="Store" className='store-image' />
+                    </div>
                     <Link to={"/store"} className="shop-button" >Shop</Link>
                 </article>
                 <article id="iPad-article" className='landing-article'>

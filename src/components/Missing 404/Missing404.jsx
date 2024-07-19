@@ -4,13 +4,13 @@ import './Missing404.css';
 
 const Missing404 = () => {
     return (
-        <div className='missing-container'>
+        <main className='missing-container'>
             <div className="missing">
-            <h1>Error 404</h1>
-            <h3>Not Found</h3>
-            <Link to="/" className='home-btn'> Go back to PineApple Home </Link>
+                <h1>Error 404</h1>
+                <h3>Not Found</h3>
+                <Link to="/" className='home-btn'>Home </Link>
             </div>
-        </div>
+        </main>
     );
 }
 
