@@ -1,18 +1,18 @@
-import PropTypes from 'prop-types';
 import ItemCount from '../ItemCount/ItemCount';
 import TechnicalDetailsContainer from '../TechnicalDetailsContainer/TechnicalDetailsContainer';
 import { useState } from 'react';
+import { useCart } from '../../hooks/useCart';
 
 const ItemDetail = ({ id, name, price, stock, description, image, technicalDetails }) => {
 
     const [quantity, setQuantity] = useState(0);
+    const { addItem, isInCart, totalQuantity, totalPrice } = useCart();
 
-    const handleAddProductToCart = (quantity) => {
+    const handleAddProductToCart = (count) => {
 
-        const productToAdd = { id, name, price}
-        console.log(productToAdd);
-        console.log(`Added: ${quantity} ${productToAdd.name}`);
-        setQuantity(quantity);
+        const productObj = { id, name, price, quantity: count}
+            addItem(productObj);
+            console.log(`Added: ${count} ${name} of $${price} to the Cart.\n Total items: ${totalQuantity}\n Total to pay: $${totalPrice}`);
     }
 
     return (
@@ -23,16 +23,18 @@ const ItemDetail = ({ id, name, price, stock, description, image, technicalDetai
                 <div className='product-image-background'>
                     <img src={image} alt={name} className='product-image' />
                 </div>
-                <ItemCount 
-                    id={id}
-                    name={name}
-                    image={image}
-                    stock={stock} 
-                    price={price}
-                    quantity={quantity}
-                    setQuantity={setQuantity}
-                    onAdd={handleAddProductToCart}
-                />
+                {isInCart(id) !== 0 && (
+                    <ItemCount 
+                        id={id}
+                        name={name}
+                        image={image}
+                        stock={stock} 
+                        price={price}
+                        quantity={quantity}
+                        setQuantity={setQuantity}
+                        onAdd={handleAddProductToCart}
+                    />
+                )}
             </div>
             <div className='product-info-box'>
                 <p className='product-description'>{description}</p>
@@ -47,18 +49,4 @@ const ItemDetail = ({ id, name, price, stock, description, image, technicalDetai
     );
 }
 
-ItemDetail.propTypes = {
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    stock: PropTypes.number.isRequired,
-    technicalDetails: PropTypes.shape({
-        connectivity: PropTypes.string,
-        batteryLife: PropTypes.string,
-        weight: PropTypes.string,
-        features: PropTypes.string,
-    }).isRequired,
-};
 export default ItemDetail;

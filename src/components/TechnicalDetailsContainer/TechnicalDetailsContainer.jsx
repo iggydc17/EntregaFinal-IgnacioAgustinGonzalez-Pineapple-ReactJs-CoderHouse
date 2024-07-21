@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import './TechnicalDetailsContainer.css';
 
 
@@ -17,14 +16,5 @@ const TechnicalDetailsContainer = ({ technicalDetails }) => {
         </div>
     );
 }
-
-TechnicalDetailsContainer.propTypes = {
-    technicalDetails: PropTypes.shape({
-        connectivity: PropTypes.string.isRequired,
-        batteryLife: PropTypes.string,
-        weight: PropTypes.string,
-        features: PropTypes.string.isRequired,
-    }).isRequired,
-};
 
 export default TechnicalDetailsContainer;

@@ -39,7 +39,7 @@ const ItemCount = ({ initialQuantity = 1, price, stock, onAdd }) => {
                 <p className="sold-out">SOLD OUT</p>
             ) : (
                 <Link 
-                    to='/cart/'
+                    to='/#/'
                     onClick={ () => onAdd(count) } 
                     className='add-to-cart-btn'
                 > 

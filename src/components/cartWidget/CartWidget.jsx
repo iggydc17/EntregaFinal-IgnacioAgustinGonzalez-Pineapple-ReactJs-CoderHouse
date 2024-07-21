@@ -1,21 +1,21 @@
 import "./CartWidget.css"
 import "../NavBar/NavBar.css"
-import { useState } from "react"
 import { Link } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 const Cart = () => {
 
-    const [count, setCount] = useState(11);
-    
-    const handleCount = () => {
-        setCount((prevCount) => prevCount + 1);
-    }
+    const { totalQuantity } =  useCart();
 
     return (
         <div id="cart-logo-container">
             <li>
                 <Link to="/cart"><i className="bi bi-cart"></i></Link>
-                <span className="notification"> { count }  </span>
+                {totalQuantity !== 0 ? (
+                    <span className="notification"> { totalQuantity } </span>
+                ) : (
+                    <span></span>
+                )}
             </li>
         </div>
     );
