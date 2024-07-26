@@ -1,12 +1,14 @@
 import ItemCount from '../ItemCount/ItemCount';
-import TechnicalDetailsContainer from '../TechnicalDetailsContainer/TechnicalDetailsContainer';
+//import TechnicalDetailsContainer from '../TechnicalDetailsContainer/TechnicalDetailsContainer';
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 
-const ItemDetail = ({ id, name, price, stock, description, image, technicalDetails }) => {
+const ItemDetail = ({ id, name, price, stock, description, image }) => {
 
     const [quantity, setQuantity] = useState(0);
     const { addItem, isInCart, totalQuantity, totalPrice } = useCart();
+
+    document.title = `${name} - PineApple`;
 
     const handleAddProductToCart = (count) => {
 
@@ -44,8 +46,8 @@ const ItemDetail = ({ id, name, price, stock, description, image, technicalDetai
                 </p>
             </div>
             <hr />
-            <TechnicalDetailsContainer technicalDetails={technicalDetails} />
-        </div>
+{/*             <TechnicalDetailsContainer technicalDetails={technicalDetails} />
+ */}        </div>
     );
 }
 

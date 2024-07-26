@@ -13,6 +13,7 @@
 }
 
 .vision-image-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +23,6 @@
 }
 
 .vision-first-image {
-    position: relative;
     width: 54%;
     height: auto;
     object-fit: contain;
@@ -30,7 +30,7 @@
 
 .vision-image-text {
     position: absolute;
-    bottom: -280px;
+    bottom: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,6 +51,7 @@
 .vision-image-fig {
     font-size: 3.65rem;
     letter-spacing: -1px;
+    margin-top: 20px;
 }
 
 .watch-youtube-video-container {

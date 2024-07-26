@@ -37,7 +37,7 @@ const StoreCategoriesContainer = () => {
                     <h1 className="categories-title">
                         Store.&nbsp;
                         <span className="span-title">
-                            The best way to buy the <br /> products you love.
+                            The best way to buy the products you love.
                         </span> 
                     </h1>
                     <StoreCategoriesList categories={categories} />

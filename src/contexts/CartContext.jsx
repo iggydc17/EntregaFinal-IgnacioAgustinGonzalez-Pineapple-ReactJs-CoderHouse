@@ -6,7 +6,6 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
-    console.log(cart);
 
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id);
@@ -33,8 +32,6 @@ export const CartProvider = ({ children }) => {
     }
 
     const totalQuantity = getTotalQuantity();
-
-    
     
     //Calculate total price of elements in the Cart.
     const getTotalPrice = () => {

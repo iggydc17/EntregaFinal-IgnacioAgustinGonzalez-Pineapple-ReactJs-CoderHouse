@@ -65,3 +65,11 @@ body {
     line-height: 1.1;
     letter-spacing: .007em;
 }
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}

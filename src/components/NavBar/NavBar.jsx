@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartWidget from "../cartWidget/CartWidget"
 import "./NavBar.css"
 
@@ -8,28 +8,28 @@ const NavBar = () => {
         <nav>
             <ul className="nav-menu">
                 <li>
-                    <Link to="/"><i className="bi bi-apple"></i></Link>
+                    <NavLink to="/"><i className="bi bi-apple"></i></NavLink>
                 </li>
                 <li>
-                    <Link to={"/store"}> Store </Link>
+                    <NavLink to={"/store"}> Store </NavLink>
                 </li>
                 <li>
-                    <Link to={"/category/mac"}> Mac </Link>
+                    <NavLink to={"/category/mac"}> Mac </NavLink>
                 </li>
                 <li>
-                    <Link to={"/category/ipad"}> iPad </Link>
+                    <NavLink to={"/category/ipad"}> iPad </NavLink>
                 </li>
                 <li>
-                    <Link to={"/category/iphone"}> iPhone </Link>
+                    <NavLink to={"/category/iphone"}> iPhone </NavLink>
                 </li>
                 <li>
-                    <Link to={"/category/airpods"}> AirPods </Link>
+                    <NavLink to={"/category/airpods"}> AirPods </NavLink>
                 </li>
                 <li>
-                    <Link to={"/category/vision"}> Vision </Link>
+                    <NavLink to={"/category/vision"}> Vision </NavLink>
                 </li>
                 <li>
-                    <Link to={"/category/accessories"}> Accessories </Link>
+                    <NavLink to={"/category/accessories"}> Accessories </NavLink>
                 </li>
                 <CartWidget />
             </ul>

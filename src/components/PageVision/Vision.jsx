@@ -21,6 +21,8 @@ const Vision = () => {
     const frontDownImage = "https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/features/sensors_all__dp0a8e4y4u4i_large.jpg";
     const dualChipImage = "https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/features/sensors_chips__s805s5o3gkii_large.jpg";
 
+    document.title = "Vision - PineApple";
+
 
     return (
         <main className='vision-landing-page'>
@@ -39,10 +41,8 @@ const Vision = () => {
                     />
                     <div className="vision-image-text">
                         <h1 className='vision-image-fig'>
-                            <figure>
-                                <i className="bi bi-apple"></i>
-                                Vision Pro
-                            </figure>
+                            <i className="bi bi-apple"></i>
+                            Vision Pro
                         </h1>
                         <Link to={'/detail/29/'} className='buy-vision-button'>Buy</Link>
                     </div>

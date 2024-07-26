@@ -10,7 +10,7 @@ const LatestProduct = ( { lastProduct }) => {
                     <h2 className="last-product-description">{lastProduct.description}</h2>
                     <p>From ${lastProduct.price}</p>
                 </div>
-                <img src={lastProduct.image} alt={lastProduct.name} />
+                <img src={lastProduct.image} alt={lastProduct.name} className='last-product-image' />
             </Link>
         </div>
     );

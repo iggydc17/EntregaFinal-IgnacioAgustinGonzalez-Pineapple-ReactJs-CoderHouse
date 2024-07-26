@@ -5,7 +5,7 @@ export const StoreCategory = ({ category }) => {
     return (
         <div className="category-card" title={category.category}>
             <Link to={`/category/${category.category}`}>
-                <img src={category.image} alt={category.category} />
+                <img src={category.image} alt={category.category} className='store-categories-image'/>
                 <p className='category-name'>
                     {category.category.charAt(0).toUpperCase() + category.category.slice(1)}
                 </p>

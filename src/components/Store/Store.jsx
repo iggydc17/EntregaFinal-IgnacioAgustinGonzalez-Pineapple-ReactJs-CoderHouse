@@ -4,6 +4,9 @@ import StoreCategoriesContainer from '../StoreCategoriesContainer/StoreCategorie
 import './Store.css';
 
 const Store = () => {
+
+    document.title = "PineApple Store";
+
     return (
         <main className='main-store'>
             <StoreCategoriesContainer />

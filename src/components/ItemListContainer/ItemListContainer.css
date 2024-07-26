@@ -20,6 +20,8 @@
 .item {
     min-width: 373px;
     height: 478px;
+    margin-top: 42px;
+    margin-bottom: 72px;
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -32,8 +34,8 @@
     }
 
     & img {
-        width: 172px;
-        height: 228px;
+        width: 271px;
+        height: 307px;
         object-fit: contain;
     }
 
@@ -67,4 +69,25 @@
     font-size: 17px;
     line-height: 1.47;
     letter-spacing: -0.022em;
+}
+
+.section-titles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 50px 0px 50px;
+}
+
+.section-second-title {
+    max-width: 360px;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bolder;
+    line-height: 1.1;
+    letter-spacing: .007em;
+}
+
+.lineup-title {
+    margin: 50px;
 }

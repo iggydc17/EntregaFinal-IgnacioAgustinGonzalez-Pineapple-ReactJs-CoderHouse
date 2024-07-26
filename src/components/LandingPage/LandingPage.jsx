@@ -5,6 +5,8 @@ const LandingPage = () => {
 
     const landingVideo = "https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/foundation/large.mp4";
 
+    document.title = "PineApple";
+
     return (
         <main className='landing-page-main'>
             <div id='space-nav'></div>

@@ -1,8 +1,23 @@
+.accessories-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.accessories-section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .accessories-section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
     justify-items: center;
-    row-gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .accessory-card {
@@ -10,15 +25,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    width: 18.41rem;
-    height: 500px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     background-color: white;
     border-radius: 18px;
     box-shadow: 2px 4px 12px #00000014;
     box-sizing: border-box;
     overflow: hidden;
-    padding: 30px;
+    padding: 20px;
     cursor: pointer;
     transition: all 0.3s;
 
@@ -27,12 +42,13 @@
     }
 
     & img {
-        width: 230px;
-        height: 230px;
+        width: 100%;
+        max-width: 230px;
+        height: auto;
         object-fit: cover;
     }
 
-    & a{
+    & a {
         color: black;
         text-decoration: none;
     }
@@ -42,20 +58,22 @@
     font-weight: bold;
     font-size: 13px;
     color: brown;
+    margin-top: 10px;
 }
 
 .accessory-name {
     font-size: 18px;
     font-weight: bold;
-    letter-spacing: -.022em;
-    line-height: 1.2353641176;
-    margin-top: -2px;
-    margin-bottom: 32px;
+    letter-spacing: -0.022em;
+    line-height: 1.235;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .accessory-price {
     font-size: 15px;
-    letter-spacing: -.016em;
-    line-height: 1.2857742857;
+    letter-spacing: -0.016em;
+    line-height: 1.285;
     white-space: normal;
+    margin-bottom: 10px;
 }

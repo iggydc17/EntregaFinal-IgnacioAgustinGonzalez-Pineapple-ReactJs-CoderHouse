@@ -6,7 +6,8 @@ const Cart = () => {
 
     return (
         <main className='cart-main'>
-            <h1>Cart</h1>
+            <h1 className='cart-title'>Cart</h1>
+            <h2>Your Cart is Empty</h2>
         </main>
     );
 }

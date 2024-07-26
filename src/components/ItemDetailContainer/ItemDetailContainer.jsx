@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProductsById } from "../../data/asyncMockProducts";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import './ItemDetailContainer.css';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../services/firebase";
 
 const ItemDetailContainer = () => {
 
@@ -13,23 +14,20 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const fetchProductById = async () => {
-            try {
-                const response = await getProductsById(Number(id));
-                if (response.length > 0) {
-                    setProduct(response[0]); 
-                } else {
-                    setFetchError("Product not found.");
+        getDoc(doc(db, "pineappleProducts", id))
+            .then((querySnapshot) => {
+                const product = {
+                    id: querySnapshot.id, 
+                    ...querySnapshot.data()
                 }
-                setFetchError(null);
-            } catch (err) {
-                setFetchError(err.message || "Error when obtaining the product");
-            } finally {
-                setIsLoading(false);
-            }
-        };
 
-        fetchProductById();
+                setProduct(product);
+            })
+            .catch((err) => setFetchError(err))
+            .finally(() => {
+                setIsLoading(false);
+            });
+
     }, [id]);
 
     return (
