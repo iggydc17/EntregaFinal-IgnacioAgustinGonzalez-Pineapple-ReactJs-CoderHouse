@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getProductsByCategory } from "../../data/asyncMockProducts";
 import StoreAccessoriesCards from "../Store Accessories Cards/StoreAccessoriesCards";
 import './StoreAccessories.css';
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../services/firebase";
 
 const StoreAccessories = () => {
 
@@ -12,9 +13,17 @@ const StoreAccessories = () => {
     useEffect(() => {
         const fetchAccessories = async () => {
             try {
-                const response = await getProductsByCategory("accessories");
-                setAccessories(response);
-                setFetchError(null);
+                setIsLoading(true);
+
+                // Fetch Products with category 'accessories'
+                const collectionProductsRef = query(collection(db, "pineappleProducts"), where("category", "==", "accessories"));
+                const querySnapshot = await getDocs(collectionProductsRef);
+                const accessoriesList = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+
+                setAccessories(accessoriesList);
             }
             catch(error) {
                 setFetchError(error);

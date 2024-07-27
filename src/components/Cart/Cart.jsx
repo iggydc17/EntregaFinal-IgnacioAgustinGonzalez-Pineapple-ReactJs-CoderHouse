@@ -3,6 +3,7 @@ import './Cart.css';
 
 const Cart = () => {
 
+    document.title = "Cart - PineApple";
 
     return (
         <main className='cart-main'>

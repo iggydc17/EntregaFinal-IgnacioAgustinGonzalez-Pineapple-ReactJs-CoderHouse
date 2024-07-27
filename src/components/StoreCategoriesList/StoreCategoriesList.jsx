@@ -1,9 +1,13 @@
 import StoreCategory from "../StoreCategory/StoreCategory";
 
 const StoreCategoriesList = ({ categories }) => {
+    
+    const orderedCategories = categories.sort((a, b) => a.category.localeCompare(b.category));
+
     return (
+
         <div className="store-categories">
-            {categories.map((category, index) => (
+            {orderedCategories.map((category, index) => (
                 <StoreCategory key={index} category={category} />
             ))}
         </div>

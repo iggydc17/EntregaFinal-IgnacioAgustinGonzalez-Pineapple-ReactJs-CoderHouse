@@ -3,9 +3,11 @@ import StoreAccessory from "../Store Accessory/StoreAccessory";
 
 const StoreAccessoriesCards = ({ accessories }) => {
 
+    const sortedAccessories = accessories.sort((a, b) => b.price - a.price);
+
     return (
         <section className="accessories-section">
-            {accessories.map((accessory) => (
+            {sortedAccessories.map((accessory) => (
                 <StoreAccessory key={accessory.id} accessory={accessory} />
             ))}
         </section>
@@ -15,12 +17,10 @@ const StoreAccessoriesCards = ({ accessories }) => {
 StoreAccessoriesCards.propTypes = {
     accessories: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number.isRequired,
             category: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             price: PropTypes.number.isRequired,
             year: PropTypes.number.isRequired,
-            stock: PropTypes.number.isRequired,
             description: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
         })

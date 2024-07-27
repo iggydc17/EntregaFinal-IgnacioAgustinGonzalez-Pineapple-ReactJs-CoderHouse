@@ -2,12 +2,17 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const StoreCategory = ({ category }) => {
+
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+
     return (
-        <div className="category-card" title={category.category}>
+        <div className="category-card" title={capitalizeFirstLetter(category.category)}>
             <Link to={`/category/${category.category}`}>
                 <img src={category.image} alt={category.category} className='store-categories-image'/>
                 <p className='category-name'>
-                    {category.category.charAt(0).toUpperCase() + category.category.slice(1)}
+                    {capitalizeFirstLetter(category.category)}
                 </p>
             </Link>
         </div>

@@ -5,7 +5,7 @@ import './Store.css';
 
 const Store = () => {
 
-    document.title = "PineApple Store";
+    document.title = "PineApple Store Online - PineApple";
 
     return (
         <main className='main-store'>

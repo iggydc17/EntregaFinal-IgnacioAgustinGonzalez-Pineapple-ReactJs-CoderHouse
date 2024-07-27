@@ -18,7 +18,6 @@ const LatestProduct = ( { lastProduct }) => {
 
 LatestProduct.propTypes = {
     lastProduct: PropTypes.shape({
-        id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         description: PropTypes.string.isRequired,
