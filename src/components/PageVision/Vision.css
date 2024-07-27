@@ -3,7 +3,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 50px 50px 0px 50px;
+    padding: 50px;
+    margin-bottom: 6%;
+    
+    & h1,
+    & h2 {
+        margin: 0;
+    }
 }
 
 .centered-container {
@@ -24,20 +30,21 @@
 
 .vision-first-image {
     width: 54%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
 }
 
 .vision-image-text {
     position: absolute;
-    bottom: 70px;
+    bottom: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
     & .buy-vision-button {
-        font-size: 28px;
+        font-size: 10vh;
         font-weight: bold;
         color: #FF5A00;
         text-decoration: none;
@@ -49,9 +56,9 @@
 }
 
 .vision-image-fig {
-    font-size: 3.65rem;
+    font-size: 3.5vw;
     letter-spacing: -1px;
-    margin-top: 20px;
+    margin: 1rem;
 }
 
 .watch-youtube-video-container {
@@ -136,20 +143,21 @@
         align-items: flex-start;
         width: 100%;
         margin-top: 66px;
+        text-align: center;
 
         & .box-subtitle {
+            width: 54%;
             font-size: 31px;
-            line-height: 1.12;
+            line-height: 1.24;
             font-weight: bold;
-            width: 325px;
         }
 
         & .box-p {
+            width: 66%;
             font-size: 20px;
             line-height: 1.38;
             font-weight: bold;
             color: #86868B;
-            width: 570px;
             margin-bottom: 80px;
         }
     }
@@ -166,83 +174,60 @@
     text-align: center;
 
     & .typography {
-        width: 735px;
+        width: 75%;
         font-size: 22px;
         line-height: 1.33;
         font-weight: bold;
         letter-spacing: .009em;
-        text-align: inherit;
+        text-align: center;
         color: #86868b;
         margin: 0 auto;
     }
 }
-
 .super-img-description-container {
-    display: grid;
-    grid-template-columns: 20% 1fr;
-    gap: 100px;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 0px 0px 0px 96px;
     margin: 20px 0px 0px 90px;
+    gap: 20px;
 }
 
 .descriptions-box {
-    display: grid;
-    grid-template-rows: repeat(5, auto);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 21rem;
     margin-top: 140px;
 }
 
-.description-item {
-
-    & .description-p {
-        font-size: 20px;
-        line-height: 1.5;
-        font-weight: bold;
-        letter-spacing: .011em;
-        color: #86868b;
-        margin: 0;
-    }
-
-    & .description-p-span {
-        font-weight: bold;
-        color: #1D1D1F;
-    }
+.description-item .description-p {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    letter-spacing: .011em;
+    color: #86868b;
+    margin: 0;
 }
 
-.image-side {
+.description-item .description-p-span {
+    font-weight: bold;
+    color: #1D1D1F;
+}
+
+.image-side-box {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 
 .side-image {
-    transform: translateX(20px);
-}
-
-.front-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-}
-
-.front-image {
-    width: 100%;
-    height: auto;
-    margin-top: 70px;
-}
-
-.front-image-figcaption {
-    font-size: 21px;
-    line-height: 1.38;
-    font-weight: 600;
-    color: #86868B;
-    margin-top: 20px;
-
-    & .front-image-description-span {
-        color: #1D1D1F;
-    }
+    height: 100%;
 }
 
 .top-angle-container {
@@ -250,7 +235,7 @@
     text-align: center;
 
     & p {
-        width: 735px;
+        width: 80%;
         font-size: 21px;
         line-height: 1.33;
         font-weight: bold;
@@ -268,16 +253,20 @@
 .top-angle-img-box {
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .top-image {
     display: block; 
     margin: 0 auto;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .get-vision-button {
     position: absolute;
-    bottom: 130px;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 19px;
@@ -327,7 +316,7 @@
 }
 
 .tech-p {
-    width: 46rem;
+    width: 85%;
     font-size: 23px;
     line-height: 1.33;
     font-weight: 600;
@@ -359,6 +348,10 @@
     width: 100%;
 }
 
+.front-image-figcaption {
+    margin-bottom: 4rem;
+}
+
 .front-close-image {
     display: block;
     margin: 0 auto; 
@@ -369,14 +362,12 @@
 
 .spatial-container {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.spatial-image-container {
-    position: relative;
-    margin-bottom: 380px;
-}
-
+.spatial-image-container,
 .big-image-container {
     max-width: 100%;
     overflow: hidden;
@@ -385,31 +376,38 @@
 .spatial-image {
     width: 100%;
     height: auto;
+    margin-bottom: 40%;
 }
 
 .spatial-text-box {
     position: absolute;
-    top: 475px;
-    left: 760px;
-    right: 0;
-    bottom: 0;
-    width: 28rem;
+    top: 52%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 30rem;
     color: white;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .spatial-h2 {
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 1.325;
     font-weight: 700;
     letter-spacing: .004em;
-    text-align: unset;
     margin: 0;
-    margin-bottom: 46px;
+    margin-bottom: 1.5rem;
 }
 
 .spatial-p {
-    font-size: 20px;
-    line-height: 1.381002381;
+    font-size: 1rem;
+    line-height: 1.381;
     font-weight: 600;
     letter-spacing: .011em;
     margin: 0;
@@ -458,4 +456,442 @@
 .design-h2 {
     margin-top: 180px;
     margin-bottom: -40px;
+}
+
+.front-image-container,
+.vision-closer-image-box,
+.top-angle-container,
+.front-image-box {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inside-image,
+.front-down-image,
+.vision-closer-image,
+.front-image,
+.dual-chip-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Media Query for Responsive */
+
+@media (max-width: 1321px) {
+
+    .super-img-description-container {
+        display: none;
+    }
+    
+    .front-image {
+        margin-top: 48px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .spatial-h2 {
+        font-size: 2rem;
+    }
+
+    .spatial-p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 864px) {
+
+    .vision-image-text .buy-vision-button {
+        font-size: 8vh;
+    }
+
+    .spatial-text-box {
+        max-width: 38%;
+        margin-top: 40px;
+    }
+
+    .spatial-h2 {
+        width: 130%;
+        font-size: 1.6rem;
+    }
+
+    .spatial-p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .vision-titles-container .section-title{
+        font-size: 4.5rem;
+    }
+
+    .vision-titles-container .section-second-title {
+        font-size: 1.5rem;
+    }
+
+    .vision-image-text .buy-vision-button {
+        font-size: 7vh;
+    }
+
+    .h1-box h1 {
+        font-size: 2.25rem;
+    }
+
+    .category-container .section-title {
+        font-size: 3.25rem;
+        margin-top: 110px;
+    }
+
+    .category-container .box .box-p {
+        font-size: 1rem;
+    }
+
+    .category-container .design-titles-box .typography {
+        font-size: 1.5rem;
+    }
+
+    .tech-h1 {
+        padding: 20px;
+        font-size: 2.5rem;
+    }
+
+    .tech-p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .get-vision-button {
+        bottom: 12%;
+        font-size: 17px;
+        min-width: 20px;
+        padding: 16px 26px;
+    }
+
+    .vision-pro-title {
+        font-size: 2.15rem;
+    }
+
+    .spatial-text-box {
+        margin-top: 10%;
+    }
+
+    .spatial-h2 {
+        width: 163%;
+    }
+}
+
+@media (max-width: 658px) {
+    
+    .vision-titles-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+
+        & .section-second-title {
+            text-align: center;
+        }
+    }
+
+    .vision-image-text .buy-vision-button {
+        font-size: 6vh;
+    }
+
+    .h1-box h1 {
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    .vision-pro-title,
+    .vision-closer-image {
+        margin-bottom: 100px;
+    }
+
+    .category-container .design-titles-box .typography,
+    .top-angle-container .typography {
+        font-size: 1rem;
+    }
+
+    .category-container {
+
+        & .section-title {
+            font-size: 2.85rem;
+            margin: 74px 12px;
+        }
+
+        & .section-name {
+            padding-top: 42px;
+        }
+    }
+    
+    .category-container .box .box-subtitle,
+    .category-container .box .box-p {
+        width: 80%;
+    }
+
+    .front-image-figcaption {
+        font-size: 0.85rem;
+    }
+
+    .technology-section {
+
+        & h1 {
+            font-size: 2rem;
+        }
+
+        & h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .spatial-container {
+        position: static;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .spatial-text-box {
+        display: none;
+    }
+}
+
+@media (max-width: 634px) {
+
+    .vision-image-text .buy-vision-button {
+        font-size: 7.5vh;
+        margin-top: -10px;
+    }
+
+    .vision-image-container {
+        margin-bottom: 36px;
+    }
+
+    .h1-box h1 {
+        font-size: 1.4rem;
+    }
+
+    .get-vision-button {
+        bottom: 5%;
+        font-size: 15px;
+        min-width: 4px;
+        padding: 10px 12px;
+        margin-bottom: 50px;
+    }
+
+    .last-vision-buy-button {
+        font-size: 15px;
+        min-width: 20px;
+        padding: 16px 26px;
+        margin-top: -20px;
+        margin-bottom: 52px;
+    }
+
+    .category-container {
+
+        & .section-title {
+            font-size: 2.65rem;
+        }
+
+        & .design-h2 {
+            margin-top: 32px;
+        }
+    }
+
+    .technology-container .tech-h3 {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 482px) {
+
+    .vision-titles-container {
+        margin-top: -18px;
+
+        & .section-title {
+            font-size: 3.5rem;
+        }
+
+        & .section-second-title {
+            font-size: 1.25rem;
+        }
+    }
+
+    .vision-image-text .buy-vision-button {
+        font-size: 6vh;
+    }
+
+    .watch-youtube-video-container .watch-youtube-video-button {
+        font-size: 17px;
+        min-width: 20px;
+        padding: 16px 26px;
+        margin-bottom: 50px;
+    }
+
+    .vision-pro-title,
+    .vision-closer-image {
+        margin-bottom: 40px;
+    }
+
+    .get-vision-button {
+        bottom: -6%;
+    }
+
+    .category-container .box .box-subtitle,
+    .category-container .box .box-p {
+        width: 90%;
+    }
+
+    .category-container {
+
+        & .section-title {
+            font-size: 2rem;
+        }
+
+        & .box .box-p {
+            margin-bottom: 40px;
+        }
+
+        & .design-h2 {
+            margin-top: 32px;
+        }
+    }
+
+    .front-image-figcaption {
+        font-size: 0.7rem;
+        line-height: 1.5;
+    }
+
+    .technology-section {
+
+        & h1 {
+            font-size: 1.5rem;
+        }
+
+        & h2 {
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        & h3 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+
+    .vision-image-text .buy-vision-button {
+        font-size: 4vh;
+        margin-top: -12px;
+    }
+
+    .h1-box h1 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .watch-youtube-video-container .watch-youtube-video-button {
+        font-size: 15px;
+        min-width: 12px;
+        padding: 10px 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .category-container {
+        
+        & .section-name,
+        & .section-second-title {
+            font-size: 1rem;
+        }
+
+        & .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }    
+    }
+
+    .category-container .box .box-subtitle,
+    .top-image {
+        margin-top: -40px;
+    }
+
+    .category-container .box .box-p {
+        font-size: 0.85rem;
+    }
+
+    .get-vision-button {
+        bottom: -12%;
+    }
+
+    .tech-p {
+        font-size: 0.85rem;
+        margin-bottom: 40px;
+    }
+
+    .spatial-image {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 356px) {
+
+    .get-vision-button {
+        font-size: 12px;
+        padding: 5px 10px;
+        bottom: -16%;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 280px) {
+
+    .vision-titles-container {
+
+        & .section-title {
+            font-size: 3rem;
+        }
+
+        & .section-second-title {
+            font-size: 1rem;
+        }
+    }
+
+    .category-container .section-title,
+    .category-container .box .box-subtitle{
+        font-size: 1.5rem;
+    }
+
+    .category-container .box .box-p {
+        font: 0.55rem;
+        margin-bottom: 12px;
+    }
+
+    .category-vision-video {
+        margin-top: -50px;
+        margin-bottom: -20px;
+    }
+
+    .front-image {
+        margin-top: -40px;
+    }
+
+    .front-image-figcaption {
+        margin-bottom: 32px;
+    }
+
+    .category-container .design-titles-box .typography,
+    .top-angle-container .typography {
+        font-size: 0.75rem;
+        text-align: left;
+        margin-bottom: 92px;
+    }
+
+    .last-vision-buy-button {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
 }
