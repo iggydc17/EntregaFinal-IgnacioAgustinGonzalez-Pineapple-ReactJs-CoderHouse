@@ -22,7 +22,7 @@ const LandingPage = () => {
                     <h2 className='vision-landing-subtitle'>
                         You´ve never seen everything like this before.
                     </h2>
-                    <Link to={'/detail/29/'} className='buy-button'>Buy</Link>
+                    <Link to={'/detail/Y78K7aKbBRMBO4GH9C43/'} className='buy-button'>Buy</Link>
                 </div>
             </div>
             <section className="articles-container">
@@ -31,7 +31,7 @@ const LandingPage = () => {
                     <h2>Our most powerful camera yet.</h2>
                     <h2>Ultrafast chips. And USB-C.</h2>
                     <div className="button-box">
-                    <Link to={"/detail/15/"} className='buy-button'>Buy</Link>
+                    <Link to={"/detail/PrY9ehYZqXurtzdlAR7S/"} className='buy-button'>Buy</Link>
                     </div>
                     <img id="iPhone-img" src="img/iPhone-pro.jpg" alt="iPhone 15 Pro" />
                 </article>
@@ -46,7 +46,7 @@ const LandingPage = () => {
                     <h1>iPad Pro</h1>
                     <h2>Unbelievable thin. Incredible powerful.</h2>
                     <div className="button-box">
-                        <Link className='buy-button' to={"/detail/11/"}>Buy</Link>
+                        <Link className='buy-button' to={"/detail/s7Nkv0K5yqEUqVc3GsMr/"}>Buy</Link>
                     </div>
                         <img src="img/iPad-pro.jpg" alt="iPad Pro" />
                 </article>

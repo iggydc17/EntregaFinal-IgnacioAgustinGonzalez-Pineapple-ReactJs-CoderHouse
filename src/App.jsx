@@ -10,6 +10,12 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from './contexts/CartContext';
 
+// Toastify Notification Imports.
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
+
 function App() {
 
   return (
@@ -23,12 +29,15 @@ function App() {
             <Route exact path="/category/vision" element={<Vision />} />
             <Route exact path="/category/:category/" element={<ItemListContainer />} />
             <Route exact path="/detail/:id/" element={<ItemDetailContainer />} />
-            <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/cart/" element={<Cart />} />
+            <Route exact path="/aboutUs/" element={<AboutUs />} />
+            <Route exact path="/contactUs/" element={<ContactUs />} />
             <Route path="*" element={<Missing404 />} />
           </Routes>
         </CartProvider>
         <Footer />
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }

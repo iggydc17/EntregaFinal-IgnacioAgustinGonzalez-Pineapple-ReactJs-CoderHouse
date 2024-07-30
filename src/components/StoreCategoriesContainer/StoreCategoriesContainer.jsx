@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import StoreCategoriesList from "../StoreCategoriesList/StoreCategoriesList";
 import './StoreCategoriesContainer.css';
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../services/firebase";
+import { db } from "../../libraries/firebase";
 
 const StoreCategoriesContainer = () => {
 

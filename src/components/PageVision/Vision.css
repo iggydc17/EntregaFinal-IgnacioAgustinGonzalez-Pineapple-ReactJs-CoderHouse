@@ -44,7 +44,7 @@
     
 
     & .buy-vision-button {
-        font-size: 10vh;
+        font-size: 6vh;
         font-weight: bold;
         color: #FF5A00;
         text-decoration: none;
@@ -166,7 +166,8 @@
 .entertainment-container,
 .photos-and-videos-container,
 .apps-category-container,
-.design-container {
+.apps,
+.design {
     background-color: #F5F5F7;
 }
 
@@ -184,6 +185,7 @@
         margin: 0 auto;
     }
 }
+
 .super-img-description-container {
     display: flex;
     flex-wrap: wrap;
@@ -313,6 +315,7 @@
 
 .tech-h1 {
     font-size: 80px;
+    padding: 20px;
 }
 
 .tech-p {
@@ -532,7 +535,7 @@
     }
 
     .vision-image-text .buy-vision-button {
-        font-size: 7vh;
+        font-size: 5vh;
     }
 
     .h1-box h1 {
@@ -596,7 +599,7 @@
     }
 
     .vision-image-text .buy-vision-button {
-        font-size: 6vh;
+        font-size: 3.7vh;
     }
 
     .h1-box h1 {
@@ -660,7 +663,7 @@
 @media (max-width: 634px) {
 
     .vision-image-text .buy-vision-button {
-        font-size: 7.5vh;
+        font-size: 3.4vh;
         margin-top: -10px;
     }
 
@@ -719,7 +722,7 @@
     }
 
     .vision-image-text .buy-vision-button {
-        font-size: 6vh;
+        font-size: 3vh;
     }
 
     .watch-youtube-video-container .watch-youtube-video-button {
@@ -784,7 +787,7 @@
 @media (max-width: 380px) {
 
     .vision-image-text .buy-vision-button {
-        font-size: 4vh;
+        font-size: 2.5vh;
         margin-top: -12px;
     }
 

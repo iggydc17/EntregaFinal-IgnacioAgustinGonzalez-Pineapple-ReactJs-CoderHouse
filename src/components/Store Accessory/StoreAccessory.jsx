@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 
 const StoreAccessory = ({ accessory }) => {
@@ -14,14 +13,5 @@ const StoreAccessory = ({ accessory }) => {
         </div>
     );
 }
-
-StoreAccessory.propTypes = {
-    accessory: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-    }).isRequired,
-};
 
 export default StoreAccessory;

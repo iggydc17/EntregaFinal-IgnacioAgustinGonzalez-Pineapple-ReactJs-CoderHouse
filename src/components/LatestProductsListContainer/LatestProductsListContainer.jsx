@@ -2,7 +2,7 @@ import LatesProductsDetail from '../LatesProductsDetail/LatesProductsDetail';
 import { useState, useEffect } from 'react';
 import './LatestProductsListContainer.css';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../services/firebase';
+import { db } from '../../libraries/firebase';
 
 const LatestProductsListContainer = () => {
 

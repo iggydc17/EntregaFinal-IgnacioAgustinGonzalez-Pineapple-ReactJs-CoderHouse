@@ -37,7 +37,7 @@ const Footer = () => {
             <hr />
             <div className="copy-box">
                 <p className="copy">&copy; {new Date().getFullYear()} Pineapple Inc. All Rights Reserved</p>
-                <p><Link to="#">About Pineapple</Link> | <Link to="#">Contact Us</Link></p>                
+                <p><Link to="/aboutUs/">About Pineapple</Link> | <Link to="/contactUs/">Contact Us</Link></p>                
             </div>
         </footer>
     );

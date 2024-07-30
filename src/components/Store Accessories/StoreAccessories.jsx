@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import StoreAccessoriesCards from "../Store Accessories Cards/StoreAccessoriesCards";
 import './StoreAccessories.css';
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../services/firebase";
+import { db } from "../../libraries/firebase";
 
 const StoreAccessories = () => {
 

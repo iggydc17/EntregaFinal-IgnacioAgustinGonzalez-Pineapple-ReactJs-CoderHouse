@@ -1,12 +1,12 @@
 import ItemCount from '../ItemCount/ItemCount';
-//import TechnicalDetailsContainer from '../TechnicalDetailsContainer/TechnicalDetailsContainer';
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
+import { toast } from 'react-toastify';
 
-const ItemDetail = ({ id, name, price, stock, description, image }) => {
+const ItemDetail = ({ id, name, price, stock, year, description, image }) => {
 
     const [quantity, setQuantity] = useState(0);
-    const { addItem, isInCart, totalQuantity, totalPrice } = useCart();
+    const { addItem, isInCart } = useCart();
 
     document.title = `${name} - PineApple`;
 
@@ -14,13 +14,14 @@ const ItemDetail = ({ id, name, price, stock, description, image }) => {
 
         const productObj = { id, name, price, quantity: count}
             addItem(productObj);
-            console.log(`Added: ${count} ${name} of $${price} to the Cart.\n Total items: ${totalQuantity}\n Total to pay: $${totalPrice}`);
+            toast.success(`${count} ${name} added to the Cart`);
     }
 
     return (
         <div className="item-detail">
             <h1 className='product-title'>Buy {name}</h1>
             <p>From ${price}</p>
+            <p className='free-shipping'>Free Shipping <i className="bi bi-truck"></i></p>
             <div className='image-and-quantity-container'>
                 <div className='product-image-background'>
                     <img src={image} alt={name} className='product-image' />
@@ -32,6 +33,7 @@ const ItemDetail = ({ id, name, price, stock, description, image }) => {
                         image={image}
                         stock={stock} 
                         price={price}
+                        year={year}
                         quantity={quantity}
                         setQuantity={setQuantity}
                         onAdd={handleAddProductToCart}
@@ -41,13 +43,13 @@ const ItemDetail = ({ id, name, price, stock, description, image }) => {
             <div className='product-info-box'>
                 <p className='product-description'>{description}</p>
                 <h3 className='product-price'>Price: ${price}</h3>
+                <p className='product-year'>Release year: {year}</p>
                 <p className={`product-stock ${stock === 0 ? 'sold-out' : 'available'}`}>
-                    {stock === 0 ? 'SOLD OUT' : `Available stock: ${stock}`}
+                    {stock === 0 ? 'SOLD OUT' : `Available stock: ${stock} unities`}
                 </p>
             </div>
             <hr />
-{/*             <TechnicalDetailsContainer technicalDetails={technicalDetails} />
- */}        </div>
+        </div>
     );
 }
 

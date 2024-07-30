@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const LatestProduct = ( { lastProduct }) => {
     return (
         <div className="last-product-card">
-            <Link to={`/detail/${lastProduct.id}`} title={lastProduct.name}>
+            <Link to={`/detail/${lastProduct.productId}`} title={lastProduct.name}>
                 <div className="card-info-box">
                     <p className="last-product-name">{lastProduct.name}</p>
                     <h2 className="last-product-description">{lastProduct.description}</h2>

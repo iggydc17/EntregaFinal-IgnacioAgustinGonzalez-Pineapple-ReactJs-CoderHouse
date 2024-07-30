@@ -44,7 +44,7 @@ const Vision = () => {
                             <i className="bi bi-apple"></i>
                             Vision Pro
                         </h1>
-                        <Link to={'/detail/29/'} className='buy-vision-button'>Buy</Link>
+                        <Link to={'/detail/Y78K7aKbBRMBO4GH9C43/'} className='buy-vision-button'>Buy</Link>
                     </div>
                 </section>
 
@@ -204,7 +204,7 @@ const Vision = () => {
                     </p>
                     <div className='top-angle-img-box'>
                         <img src={topImage} alt="Vision Pro Top Image" className='top-image' />
-                        <Link to={'/detail/29/'} className='get-vision-button'> + Get The PineApple Vision Pro</Link>
+                        <Link to={'/detail/Y78K7aKbBRMBO4GH9C43/'} className='get-vision-button'> + Get The PineApple Vision Pro</Link>
                     </div>
                 </div>
                 <section className='technology-section'>
@@ -245,7 +245,7 @@ const Vision = () => {
                         </div>
                         <h2 className='tech-h2 chip-h2'>Revolutionary dual‑chip performance.</h2>
                         <p className='tech-p'>A unique dual‑chip design enables the spatial experiences on Apple Vision Pro. The powerful <span>M2</span> chip simultaneously runs visionOS, executes advanced computer vision algorithms, and delivers stunning graphics, all with incredible efficiency. And the brand-new <strong>R1</strong> chip is specifically dedicated to process input from the cameras, sensors, and microphones, streaming images to the displays within 12 milliseconds — for a virtually lag-free, real-time view of the world.</p>
-                        <Link to={'/detail/29/'} className='last-vision-buy-button'>Buy</Link>
+                        <Link to={'/detail/Y78K7aKbBRMBO4GH9C43/'} className='last-vision-buy-button'>Buy</Link>
                     </div>
                 </section>
             </div>

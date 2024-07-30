@@ -1,0 +1,65 @@
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.about-us-content {
+    max-width: 800px;
+    background: white;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    & a {
+        color: black;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.about-us-content h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.about-us-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    color: #555;
+}
+
+.go-to-store-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: hsl(210, 100%, 56%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    margin-top: 32px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: hsl(210, 100%, 46%);
+    }
+
+    &:active {
+        background-color: hsl(210, 100%, 66%);
+    }
+}
+

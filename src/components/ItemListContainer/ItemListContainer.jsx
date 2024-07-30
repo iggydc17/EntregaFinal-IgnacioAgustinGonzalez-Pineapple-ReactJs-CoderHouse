@@ -1,7 +1,7 @@
 import ItemList from "../ItemList/ItemList";
 import CategoriesVideosList from "../CategoriesVideosList/CategoriesVideosList";
 import { useEffect, useState } from "react";
-import { db } from '../../services/firebase/index';
+import { db } from '../../libraries/firebase/index';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import CategorySubtitlesList from "../CategorySubtitlesList/CategorySubtitlesList";
@@ -64,16 +64,16 @@ const ItemListContainer = () => {
     };
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <p className="is-loading">Loading...</p>;
     }
 
     if (fetchError) {
-        return <div>Error: {fetchError}</div>;
+        return <p className="fetch-error">Error: {fetchError}</p>;
     }
 
     return (
-        <div className="item-list-container">
-            <div className="section-titles">
+        <main className="item-list-container">
+            <div className="section-titles-container">
                 <h1 className="section-title">{capitalizeFirstLetter(category)}</h1>
                 <CategorySubtitlesList videos={videos} />
             </div>
@@ -82,7 +82,7 @@ const ItemListContainer = () => {
                 <h1 className="lineup-title">Explore the Lineup.</h1>
                 <ItemList items={items} />
             </div>
-        </div>
+        </main>
     );
 };
 
