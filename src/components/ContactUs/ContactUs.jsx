@@ -12,6 +12,7 @@ const ContactUs = () => {
         }, 3000);
     };
 
+    document.title = "Contact Dev - PineApple";
 
     return (
         <main className='contact-us-container'>

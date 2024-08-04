@@ -15,7 +15,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     & a {
-        color: black;
+        color: hsl(210, 84%, 29%);
     
         &:hover {
             text-decoration: underline;
@@ -43,9 +43,9 @@
     align-items: center;
     font-size: 18px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none !important;
     background-color: hsl(210, 100%, 56%);
-    color: white;
+    color: white !important;
     border: none;
     border-radius: 6px;
     padding: 12px 24px;
@@ -56,6 +56,8 @@
 
     &:hover {
         background-color: hsl(210, 100%, 46%);
+        text-decoration: underline !important
+        ;
     }
 
     &:active {

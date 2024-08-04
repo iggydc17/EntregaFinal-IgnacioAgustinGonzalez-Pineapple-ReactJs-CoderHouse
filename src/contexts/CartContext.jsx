@@ -43,14 +43,13 @@ export const CartProvider = ({ children }) => {
         return total;
     }
 
-    const totalToPay = getTotalPrice();
     
     // Delete an item in the Cart.
     /*  const deleteItem = (id) => {
 
     } */
     
-    const obj = { cart, isInCart, addItem, totalQuantity, totalToPay }
+    const obj = { cart, isInCart, addItem, totalQuantity, getTotalPrice }
 
     return (
         <CartContext.Provider value={ obj }>

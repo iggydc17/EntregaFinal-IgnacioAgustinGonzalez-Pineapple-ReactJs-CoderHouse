@@ -3,7 +3,7 @@ import "../NavBar/NavBar.css"
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 
-const Cart = () => {
+const CartWidget = () => {
 
     const { totalQuantity } =  useCart();
 
@@ -17,4 +17,4 @@ const Cart = () => {
     );
 }
 
-export default Cart;
+export default CartWidget;

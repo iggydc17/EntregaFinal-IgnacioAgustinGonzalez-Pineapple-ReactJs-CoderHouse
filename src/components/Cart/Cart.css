@@ -1,7 +1,114 @@
-.cart-main {
-    margin: 120px 90px;
-}
 
 .cart-title {
-    font-size: 52px;
+    font-size: 80px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    padding: 50px;
+    margin: 0;
+}
+
+.empty-cart-container {
+    width: 43%;
+    border: 2px solid lightgray;
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-bottom: 46px;
+
+    & .empty-cart-h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    & .empty-cart-button {
+        width: 44%;
+        margin: 0 auto;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+.total-products-in-cart {
+    font-size: 20px;
+    text-align: right;
+    margin-right: 40px;
+}
+
+.cart-products-resume-container {
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid lightgray;
+    border-radius: 12px 12px 0px 0px;
+    margin: 0 auto;
+}
+
+.item-article {
+    padding: 32px;
+    border-bottom: 1px solid lightgray;
+}
+
+.down-cart-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid lightgray;
+    border-radius: 0px 0px 12px 12px;
+    margin: -3px auto;
+    margin-bottom: 32px;
+
+    & .clear-cart-button {
+        font-size: 18px;
+        color: tomato;
+        background-color: white;
+        border: 1px solid tomato;
+        border-radius: 6px;
+        padding: 12px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: hsl(9, 100%, 64%);
+            color: white;
+        }
+
+        &:active {
+            background-color: hsl(9, 100%, 74%);
+            color: white;
+        }
+    }
+
+    & .cart-total-pay {
+        font-size: 22px;
+    }
+}
+
+.item-article {
+
+    & a {
+        color: #1D1D1F;
+    }
+
+    & .delete-cart-button {
+        font-size: 18px;
+        color: tomato;
+        background-color: white;
+        border: 1px solid tomato;
+        border-radius: 6px;
+        padding: 10px 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: hsl(9, 100%, 64%);
+            color: white;
+        }
+
+        &:active {
+            background-color: hsl(9, 100%, 74%);
+            color: white;
+        }
+    }
 }

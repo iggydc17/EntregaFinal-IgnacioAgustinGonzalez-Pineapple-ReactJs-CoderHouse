@@ -16,6 +16,13 @@ footer a {
     &:hover {
         text-decoration: underline;
     }
+
+    &:focus {
+        border: 2px solid dodgerblue;
+        border-radius: 4px;
+        outline: none;
+        padding: 4px;        
+    }
 }
 
 .footer-title {

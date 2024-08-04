@@ -3,6 +3,8 @@ import './AboutUs.css';
 
 const AboutUs = () => {
 
+    document.title = "About Us - PineApple";
+
     return (
         <main className="about-us">
             <div className="about-us-content">

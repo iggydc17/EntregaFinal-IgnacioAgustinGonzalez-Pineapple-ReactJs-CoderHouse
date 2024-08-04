@@ -57,7 +57,7 @@
     &:hover {
         transform: scale(1.05);
     }
-    
+
     &:hover .item-name {
         text-decoration: underline;
     }
@@ -76,6 +76,13 @@
         text-decoration: none;
         color: black;
     }
+
+    &:active {
+        border: 2px solid dodgerblue;
+        outline: none;
+        padding: 2px;        
+    }
+
 }
 
 .item-name {

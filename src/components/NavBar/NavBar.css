@@ -31,8 +31,9 @@
 
         &:focus {
             border: 2px solid dodgerblue;
+            border-radius: 4px;
             outline: none;
-            padding: 2px;        
+            padding: 4px;        
         }
     }
 }
