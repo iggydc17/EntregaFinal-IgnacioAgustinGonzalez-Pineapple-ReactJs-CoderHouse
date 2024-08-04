@@ -7,6 +7,8 @@ import Cart from "./components/Cart/Cart";
 import BuyerPersonalInfoForm from './components/BuyForms/BuyerPersonalInfoForm/BuyerPersonalInfoForm';
 import ShippingForm from './components/BuyForms/ShippingForm/ShippingForm';
 import PaymentForm from './components/BuyForms/PaymentForm/PaymentForm';
+import CheckSummaryInfo from './components/CheckSummaryInfo/CheckSummaryInfo';
+import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase';
 import AboutUs from './components/AboutUs/AboutUs';
 import ContactUs from './components/ContactUs/ContactUs';
 import Footer from "./components/Footer/Footer";
@@ -19,7 +21,6 @@ import { OrderProvider } from './contexts/OrderContext';
 // Toastify Notification Imports.
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-import CheckSummaryInfo from './components/CheckSummaryInfo/CheckSummaryInfo';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
               <Route exact path="/shipping-form/" element={<ShippingForm />} />
               <Route exact path="/payment-form/" element={<PaymentForm />} />
               <Route exact path="/check-summary-info/" element={<CheckSummaryInfo />} />
+              <Route exact path="/successful-purchase/" element={<SuccessfulPurchase />} />
               <Route exact path="/aboutUs/" element={<AboutUs />} />
               <Route exact path="/contactDev/" element={<ContactUs />} />
               <Route path="*" element={<Missing404 />} />

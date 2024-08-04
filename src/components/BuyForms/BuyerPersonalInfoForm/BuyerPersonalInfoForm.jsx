@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
 import SummarySideInfo from "../../SummarySideInfo/SummarySideInfo";
 import { toast } from "react-toastify";
-import { useCart } from "../../../hooks/useCart";
+import '../BuyInfoForms.css';
 
 const BuyerPersonalInfoForm = () => {
 
-    const { cart, totalQuantity, getTotalPrice } = useCart();
+    const { order, setOrder } = useOrder();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         name: '',
@@ -16,9 +17,6 @@ const BuyerPersonalInfoForm = () => {
         email: ''
     });
 
-    const { setOrder } = useOrder();
-    const navigate = useNavigate();
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -26,11 +24,16 @@ const BuyerPersonalInfoForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log('Submitting Buyer Personal Info:', formData);
 
-        setOrder(prevOrder => ({
-            ...prevOrder,
+        const updatedOrder = {
+            ...order,
             personalInfo: formData
-        }));
+        };
+
+        setOrder(updatedOrder);
+
+        console.log('Order after setting personal info:', updatedOrder);
 
         toast.success("Buyer Info pass successfully!");
 
@@ -38,6 +41,8 @@ const BuyerPersonalInfoForm = () => {
             navigate("/shipping-form");
         }, 1500);
     };
+
+    document.title = "Buyer Form - PineApple";
 
     return (
         <main className="cart-form-container buyer-personal-info-form-container">
@@ -83,7 +88,7 @@ const BuyerPersonalInfoForm = () => {
                     <button type="submit" className="continue-button">Continue</button>
                 </form>
                 <div className="summary-side-container">
-                    <SummarySideInfo formData={formData} cart={cart} totalQuantity={totalQuantity} getTotalPrice={getTotalPrice} />
+                    <SummarySideInfo />
                 </div>
         </main>
     );

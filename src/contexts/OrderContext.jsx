@@ -13,7 +13,7 @@ export const OrderProvider = ({ children }) => {
         <OrderContext.Provider value={{ order, setOrder }}>
             {children}
         </OrderContext.Provider>
-    )
-}
+    );
+};
 
 export const useOrder = () => useContext(OrderContext);

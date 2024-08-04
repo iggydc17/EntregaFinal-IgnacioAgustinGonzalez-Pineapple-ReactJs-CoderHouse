@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
 import SummarySideInfo from "../../SummarySideInfo/SummarySideInfo";
 import { toast } from "react-toastify";
+import '../BuyInfoForms.css';
 
 const ShippingForm = () => {
 
@@ -11,10 +12,11 @@ const ShippingForm = () => {
         state: "",
         city: "",
         street: "",
+        streetNumber: "",
         zipCode: ""
     })
 
-    const { setOrder } = useOrder();
+    const { order, setOrder } = useOrder();
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -24,11 +26,16 @@ const ShippingForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log('Submitting Shipping Info:', formData);
 
-        setOrder(prevOrder => ({
-            ...prevOrder,
+        const updatedOrder = {
+            ...order,
             shippingInfo: formData
-        }));
+        };
+
+        setOrder(updatedOrder);
+
+        console.log('Order after setting shipping info:', updatedOrder);
 
         toast.success("Shipping Info pass successfully!");    
         
@@ -37,6 +44,9 @@ const ShippingForm = () => {
         }, 1500);
     };
 
+    document.title = "Shipping Form - PineApple";
+
+    
     return (
         <main className="cart-form-container shipping-info-form-container">
             <h2>Shipping Info</h2>
@@ -81,10 +91,10 @@ const ShippingForm = () => {
                     <label htmlFor="street-number-input">Street number: </label>
                     <input 
                         type="text"
-                        name="number"
-                        className="number-input"
+                        name="streetNumber"
+                        className="street-number-input"
                         placeholder="Enter the street number" 
-                        value={formData.number}
+                        value={formData.streetNumber}
                         onChange={handleChange}
                     />
                     <label htmlFor="zip-code-input">Zip Code: </label>
