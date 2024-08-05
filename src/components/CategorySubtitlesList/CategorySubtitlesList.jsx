@@ -1,11 +1,11 @@
 import CategorySubtitles from "../CategorySubtitles/CategorySubtitles";
 
-const CategorySubtitlesList = ({ videos }) => {
+const CategorySubtitlesList = ({ subtitles }) => {
 
 
     return (
         <>
-            {videos.map((sub, index) => (
+            {subtitles.map((sub, index) => (
                 <CategorySubtitles key={index} sub={sub} />
             ))}
         </>

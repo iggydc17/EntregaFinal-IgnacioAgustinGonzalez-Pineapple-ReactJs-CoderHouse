@@ -1,56 +1,37 @@
-import { useEffect, useState } from "react";
 import StoreAccessoriesCards from "../Store Accessories Cards/StoreAccessoriesCards";
+import { useNotification } from '../../hooks/useNotification';
+import { useAsync } from '../../hooks/useAsync';
+import { getProducts } from "../../libraries/firestore/products";
+
 import './StoreAccessories.css';
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../libraries/firebase";
 
 const StoreAccessories = () => {
 
-    const [accessories, setAccessories] = useState([]);
-    const [fetchError, setFetchError] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const { setNotification } = useNotification();
+    const category = "accessories";
+    const asyncFunction = () => getProducts(category);
 
-    useEffect(() => {
-        const fetchAccessories = async () => {
-            try {
-                setIsLoading(true);
+    const {data: accessories, isLoading, fetchError} = useAsync(asyncFunction);
 
-                // Fetch Products with category 'accessories'
-                const collectionProductsRef = query(collection(db, "pineappleProducts"), where("category", "==", "accessories"));
-                const querySnapshot = await getDocs(collectionProductsRef);
-                const accessoriesList = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
+    if (isLoading) {
+        return <p className="is-loading">Loading PineApple accessory products...</p>;
+    }
 
-                setAccessories(accessoriesList);
-            }
-            catch(error) {
-                setFetchError(error);
-            }
-            finally{
-                setIsLoading(false);
-            }
-        }
+    if (fetchError) {
+        setNotification("danger", { message: fetchError.message || 'An error occurred fetching the accessories products' });
+        return <p className='fetch-error'>Error: {fetchError}</p>;
+    }
 
-        fetchAccessories();
-    }, []);
 
     return (
         <div className="accessories-container">
-            {isLoading && <p className="loading">Loading accessories...</p>}
-            {fetchError && <p className="fetch-error">{ fetchError }</p>}
-            {!fetchError && !isLoading && (
-                <>
-                    <h2 className="accessories-section-title">
-                        Accessories.&nbsp;
-                        <span className="span-title"> 
-                            Essentials that pair perfectly with your favorite devices.
-                        </span>
-                    </h2>
-                    <StoreAccessoriesCards accessories={accessories} />
-                </>
-            )}
+            <h1 className="accessories-section-title">
+                Accessories.&nbsp;
+                <span className="span-title"> 
+                    Essentials that pair perfectly with your favorite devices.
+                </span>
+            </h1>
+            <StoreAccessoriesCards accessories={accessories} />
         </div>
     );
 }

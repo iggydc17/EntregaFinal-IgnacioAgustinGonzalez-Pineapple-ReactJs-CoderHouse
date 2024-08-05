@@ -1,14 +1,20 @@
-
-import { useCart } from '../../hooks/useCart';
-import { Link } from 'react-router-dom';
 import CartItem from '../CartItem/CartItem';
+import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
+import { useNotification } from '../../hooks/useNotification';
 import './Cart.css';
 
 const Cart = () => {
 
-    const { cart, totalQuantity, getTotalPrice } = useCart();
+    const { cart, totalQuantity, getTotalPrice, clearCart } = useCart();
+    const { setNotification } = useNotification();
     const total = getTotalPrice();
 
+    const handleClearCart = () => {
+        clearCart();
+        setNotification("warning", "The cart is empty");
+    }
+    
     document.title = "Cart - PineApple";
 
     return (
@@ -28,7 +34,11 @@ const Cart = () => {
                         ))}
                     </div>
                     <div className='down-cart-container'>
-                        <button className='clear-cart-button'>Clear Cart &nbsp; <i className="bi bi-trash3"></i></button>
+                        <button 
+                            className='clear-cart-button'
+                            onClick={handleClearCart}>
+                                Clear Cart &nbsp; <i className="bi bi-trash3"></i>
+                        </button>
                         <h3 className='cart-total-pay'>Total: ${total}</h3>
                         <Link 
                             to={"/buyer-personal-info-form/"}

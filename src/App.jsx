@@ -17,40 +17,38 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from './contexts/CartContext';
 import { OrderProvider } from './contexts/OrderContext';
-
-// Toastify Notification Imports.
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import { NotificationProvider } from './contexts/NotificationContext';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-        <CartProvider>
-          <OrderProvider>
-            <NavBar />
-            <Routes>
-              <Route exact path="/" element={<LandingPage />} />
-              <Route exact path="/store" element={<Store />} />
-              <Route exact path="/category/vision" element={<Vision />} />
-              <Route exact path="/category/:category/" element={<ItemListContainer />} />
-              <Route exact path="/detail/:id/" element={<ItemDetailContainer />} />
-              <Route exact path="/cart/" element={<Cart />} />
-              <Route exact path="/buyer-personal-info-form/" element={<BuyerPersonalInfoForm />} />
-              <Route exact path="/shipping-form/" element={<ShippingForm />} />
-              <Route exact path="/payment-form/" element={<PaymentForm />} />
-              <Route exact path="/check-summary-info/" element={<CheckSummaryInfo />} />
-              <Route exact path="/successful-purchase/" element={<SuccessfulPurchase />} />
-              <Route exact path="/aboutUs/" element={<AboutUs />} />
-              <Route exact path="/contactDev/" element={<ContactUs />} />
-              <Route path="*" element={<Missing404 />} />
-            </Routes>
-          </OrderProvider>
-        </CartProvider>
-        <Footer />
+        <NotificationProvider>
+          <CartProvider>
+            <OrderProvider>
+              <NavBar />
+              <Routes>
+                <Route exact path="/" element={<LandingPage />} />
+                <Route exact path="/store" element={<Store />} />
+                <Route exact path="/category/vision" element={<Vision />} />
+                <Route exact path="/category/:category/" element={<ItemListContainer />} />
+                <Route exact path="/detail/:id/" element={<ItemDetailContainer />} />
+                <Route exact path="/cart/" element={<Cart />} />
+                <Route exact path="/buyer-personal-info-form/" element={<BuyerPersonalInfoForm />} />
+                <Route exact path="/shipping-form/" element={<ShippingForm />} />
+                <Route exact path="/payment-form/" element={<PaymentForm />} />
+                <Route exact path="/check-summary-info/" element={<CheckSummaryInfo />} />
+                <Route exact path="/successful-purchase/" element={<SuccessfulPurchase />} />
+                <Route exact path="/aboutUs/" element={<AboutUs />} />
+                <Route exact path="/contactDev/" element={<ContactUs />} />
+                <Route path="*" element={<Missing404 />} />
+              </Routes>
+            </OrderProvider>
+          </CartProvider>
+          <Footer />
+        </NotificationProvider>
       </BrowserRouter>
-      <ToastContainer />
     </>
   );
 }

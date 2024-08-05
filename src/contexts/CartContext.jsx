@@ -7,11 +7,12 @@ export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
+    // Check if is in Cart.
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id);
     }
 
-    // Add to Cart.
+    // Add item to Cart.
     const addItem = (productToAdd) => {
         if(!isInCart(productToAdd.id)) {
             setCart(prev => [...prev, productToAdd]);
@@ -21,6 +22,17 @@ export const CartProvider = ({ children }) => {
         }
     }
 
+    // Remove item from de Cart.
+    const removeItem = (id) => {
+        const cartUpdated = cart.filter((prod) => prod.id != id)
+        setCart(cartUpdated);
+    }
+
+    // Clear Cart.
+    const clearCart = () => {
+        setCart([]);
+    }
+    
     // Calculate total quantity of elements in the Cart.
     const getTotalQuantity = () => {
         let amount = 0;
@@ -42,14 +54,8 @@ export const CartProvider = ({ children }) => {
 
         return total;
     }
-
     
-    // Delete an item in the Cart.
-    /*  const deleteItem = (id) => {
-
-    } */
-    
-    const obj = { cart, isInCart, addItem, totalQuantity, getTotalPrice }
+    const obj = { cart, isInCart, addItem, removeItem, clearCart, totalQuantity, getTotalPrice }
 
     return (
         <CartContext.Provider value={ obj }>

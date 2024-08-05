@@ -1,44 +1,33 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../libraries/firebase";
+import { useParams } from "react-router-dom";
+import { useNotification } from "../../hooks/useNotification";
+import { useAsync } from '../../hooks/useAsync';
+import { getProductById } from "../../libraries/firestore/products";
 import './ItemDetailContainer.css';
+
 
 const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState(null);
-    const [fetchError, setFetchError] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-
+    const { setNotification } = useNotification();
     const { id } = useParams();
+    const asyncFunction = () => getProductById(id);
 
-    useEffect(() => {
-        getDoc(doc(db, "pineappleProducts", id))
-            .then((querySnapshot) => {
-                const product = {
-                    id: querySnapshot.id, 
-                    ...querySnapshot.data()
-                }
+    const {data: product, isLoading, fetchError} = useAsync(asyncFunction, [id]);
 
-                setProduct(product);
-            })
-            .catch((err) => setFetchError(err))
-            .finally(() => {
-                setIsLoading(false);
-            });
 
-    }, [id]);
+    if (isLoading) {
+        return <p className="is-loading">Loading PineApple detail product...</p>;
+    }
+
+    if (fetchError) {
+        setNotification("danger", { message: fetchError.message || 'An error occurred fetching the detail product' });
+        return <p className='fetch-error'>Error: {fetchError}</p>;
+    }
+
 
     return (
         <div className="item-detail-container">
-            {isLoading && <p className="loading">Loading detail product...</p>}
-            {fetchError && <p className="fetch-error" style={{ color: 'tomato' }}> {fetchError}</p>}
-            {!fetchError && !isLoading && (
-                <>
-                    <ItemDetail {...product} />
-                </>
-            )}
+            <ItemDetail {...product} />
         </div>
     );
 }

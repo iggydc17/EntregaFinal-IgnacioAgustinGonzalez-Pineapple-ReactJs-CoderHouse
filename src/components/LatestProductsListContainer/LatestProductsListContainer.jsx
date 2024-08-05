@@ -1,49 +1,29 @@
+import { useAsync } from '../../hooks/useAsync';
+import { useNotification } from '../../hooks/useNotification';
+import { getLatestProducts } from '../../libraries/firestore/products';
 import LatesProductsDetail from '../LatesProductsDetail/LatesProductsDetail';
-import { useState, useEffect } from 'react';
 import './LatestProductsListContainer.css';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../libraries/firebase';
 
 const LatestProductsListContainer = () => {
 
-    const [lastProducts, setLastProducts] = useState([]);
-    const [fetchError, setFetchError] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    
-    useEffect(() => {
-        const fetchingLastProducts = async () => {
-            try {
-                const querySnapshot = await getDocs(collection(db, "theLatestProducts"));
-                const products = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setLastProducts(products);
-                setIsLoading(false);
-            } catch (err) {
-                setFetchError(err.message);
-            }
-            finally {
-                setIsLoading(false);
-            }
-        };
-        
-        fetchingLastProducts();
-    }, []);
-    
+    const { setNotification } = useNotification();
+    const asyncFunction = () => getLatestProducts();
+
+    const {data: lastProducts, isLoading, fetchError} = useAsync(asyncFunction);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <p className="is-loading">Loading PineApple latest products...</p>;
     }
 
     if (fetchError) {
-        return <div>Error: {fetchError}</div>;
+        setNotification("danger", { message: fetchError.message || 'An error occurred fetching the latest products' });
+        return <p className='fetch-error'>Error: {fetchError}</p>;
     }
 
     return (
         <div id="last-products-list-container">
             <h1 className='latest-products-title'>The latest. 
-                <span className='span-title'>Take a look at what’s new, right now.</span>
+                <span className='span-title'> Take a look at what’s new, right now.</span>
             </h1>
             <LatesProductsDetail lastProducts={lastProducts} />
         </div>

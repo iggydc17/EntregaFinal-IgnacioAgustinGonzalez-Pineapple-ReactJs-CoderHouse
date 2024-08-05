@@ -1,12 +1,13 @@
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
-import { toast } from 'react-toastify';
+import { useNotification } from '../../hooks/useNotification';
 
 const ItemDetail = ({ id, name, price, stock, year, description, image }) => {
 
     const [quantity, setQuantity] = useState(0);
     const { addItem, isInCart } = useCart();
+    const {setNotification} = useNotification();
 
     document.title = `${name} - PineApple`;
 
@@ -14,7 +15,7 @@ const ItemDetail = ({ id, name, price, stock, year, description, image }) => {
 
         const productObj = { id, name, price, quantity: count}
             addItem(productObj);
-            toast.success(`${count} ${name} added to the Cart`);
+            setNotification("success", `${count} ${name} added to the Cart`);
     }
 
     return (

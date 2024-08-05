@@ -1,42 +1,25 @@
-
-import { useEffect, useState } from "react";
 import StoreCategoriesList from "../StoreCategoriesList/StoreCategoriesList";
+import { useNotification } from '../../hooks/useNotification';
+import { useAsync } from '../../hooks/useAsync';
+import { getStoreCategories } from '../../libraries/firestore/products';
+
 import './StoreCategoriesContainer.css';
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../libraries/firebase";
 
 const StoreCategoriesContainer = () => {
 
-    const [categories, setCategories] = useState([]);
-    const [fetchError, setFetchError] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const { setNotification } = useNotification();
+    const asyncFunction = () => getStoreCategories();
 
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const querySnapshot = await getDocs(collection(db, "storeCategories"));
-                const categoriesList = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setCategories(categoriesList);
-                setFetchError(null);
-            } catch (err) {
-                setFetchError(err.message);
-            } finally {
-                setIsLoading(false);
-            }
-        }
+    const {data: categories, isLoading, fetchError} = useAsync(asyncFunction);
 
-        fetchCategories();
-    }, []);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <p className="is-loading">Loading Categories</p>;
     }
 
     if (fetchError) {
-        return <div>Error: {fetchError}</div>;
+        setNotification("danger", { message: fetchError.message || 'An error occurred fetching the categories' });
+        return <p className="fetch-error">Error: {fetchError}</p>;
     }
 
     return (

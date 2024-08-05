@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
 import { useEffect, useState } from "react";
 import SummarySideInfo from "../../SummarySideInfo/SummarySideInfo";
-import { toast } from "react-toastify";
 import { useCart } from "../../../hooks/useCart";
 import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
 import { db } from "../../../libraries/firebase";
 import '../BuyInfoForms.css';
+import { useNotification } from "../../../hooks/useNotification";
 
 
 const PaymentInfo = () => {
@@ -22,7 +22,8 @@ const PaymentInfo = () => {
     const [fetchError, setFetchError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const { order, setOrder } = useOrder();
-    const { cart, totalQuantity, getTotalPrice } = useCart();
+    const { cart, totalQuantity, getTotalPrice, clearCart } = useCart();
+    const { setNotification } = useNotification();
     const navigate = useNavigate();
 
     const total = getTotalPrice();
@@ -34,7 +35,6 @@ const PaymentInfo = () => {
 
     const handleOrderGeneration = async (e) => {
         e.preventDefault();
-        console.log('Submitting Payment Info:', formData);
 
         const updatedOrder = {
             ...order,
@@ -42,9 +42,7 @@ const PaymentInfo = () => {
         };
 
         setOrder(updatedOrder);
-        console.log('Order after setting payment info:', updatedOrder);
-
-        toast.success("Payment Info passed successfully!");
+        setNotification("success", "Payment Info passed successfully!");
 
         setIsLoading(true);
         try {
@@ -57,8 +55,6 @@ const PaymentInfo = () => {
                 total,
                 date: new Date()
             };
-
-            console.log('Creating order:', objectOrder);
 
             const ids = cart.map((prod) => prod.id);
 
@@ -87,11 +83,12 @@ const PaymentInfo = () => {
                 await batch.commit();
                 const orderRef = collection(db, "orders");
                 const orderAdded = await addDoc(orderRef, objectOrder);
-                toast.success(`The order's id is: ${orderAdded.id}`);
+                setNotification("success", `The order's id is: ${orderAdded.id}`)
                 setOrderCreated(true);
+                clearCart();
             } 
             else {
-                toast.error("Product out of stock.");
+                setNotification("error", "Product out of stock.");
             }
         } catch (error) {
             setFetchError(error);
@@ -106,7 +103,7 @@ const PaymentInfo = () => {
 
     useEffect(() => {
         if (orderCreated) {
-            toast.success("The order has been created successfully!");
+            setNotification("success", "The order has been created successfully, the purchase is one click away from you!");
         }
     }, [orderCreated]);
 

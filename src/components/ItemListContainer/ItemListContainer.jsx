@@ -1,81 +1,52 @@
 import ItemList from "../ItemList/ItemList";
 import CategoriesVideosList from "../CategoriesVideosList/CategoriesVideosList";
-import { useEffect, useState } from "react";
-import { db } from '../../libraries/firebase/index';
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { useParams } from "react-router-dom";
 import CategorySubtitlesList from "../CategorySubtitlesList/CategorySubtitlesList";
+import { useParams } from "react-router-dom";
+import { useNotification } from '../../hooks/useNotification';
+import { getProducts, getVideos } from "../../libraries/firestore/products";
+import { useAsync } from "../../hooks/useAsync";
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
-    const [items, setItems] = useState([]);
-    const [videos, setVideos] = useState([]);
-    const [fetchError, setFetchError] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    
     const { category } = useParams();
+    const { setNotification } = useNotification();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setIsLoading(true);
+    const asyncFunction = async () => {
+        try {
+            const [items, videos] = await Promise.all([
+                getProducts(category),
+                getVideos(category)
+            ]);
+            return { items, videos, subtitles: videos };
+        } catch (error) {
+            return { error };
+        }
+    };
 
-                // Fetch Products
-                const collectionProductsRef = category
-                    ? query(collection(db, "pineappleProducts"), where("category", "==", category))
-                    : collection(db, "pineappleProducts");
-
-                const querySnapshot = await getDocs(collectionProductsRef);
-                const productsList = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-
-                setItems(productsList);
-
-                // Fetch Videos
-                const collectionCategoriesVideosRef = category
-                    ? query(collection(db, "categoriesVideos"), where("category", "==", category))
-                    : collection(db, "categoriesVideos");
-
-                const querySnapshotVideos = await getDocs(collectionCategoriesVideosRef);
-                const categoriesVideosList = querySnapshotVideos.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                
-                setVideos(categoriesVideosList);
-
-                document.title = `${capitalizeFirstLetter(category)} - PineApple`;
-
-            } catch (error) {
-                setFetchError(error.message);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchData();
-    }, [category]);
+    const { data: { items, videos, subtitles } = {}, isLoading, fetchError } = useAsync(asyncFunction, [category]);
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
     if (isLoading) {
-        return <p className="is-loading">Loading...</p>;
+        return <p className="is-loading">Loading PineApple products...</p>;
+        
     }
 
     if (fetchError) {
-        return <p className="fetch-error">Error: {fetchError}</p>;
+        setNotification("danger", { message: fetchError.message || 'An error occurred fetching products' });
+        return (
+            <p className="fetch-error">Error: {fetchError}</p>
+        );
     }
 
     return (
         <main className="item-list-container">
             <div className="section-titles-container">
                 <h1 className="section-title">{capitalizeFirstLetter(category)}</h1>
-                <CategorySubtitlesList videos={videos} />
+                <CategorySubtitlesList subtitles={subtitles} />
             </div>
             <CategoriesVideosList videos={videos} />
             <div className="item-list-cards-container">
