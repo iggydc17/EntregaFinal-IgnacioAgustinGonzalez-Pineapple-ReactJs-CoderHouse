@@ -13,7 +13,7 @@ const ItemDetail = ({ id, name, price, stock, year, description, image }) => {
 
     const handleAddProductToCart = (count) => {
 
-        const productObj = { id, name, price, quantity: count}
+        const productObj = { id, name, price, image, stock, quantity: count}
             addItem(productObj);
             window.scrollTo({
                 top: 0,

@@ -1,0 +1,32 @@
+.cart-summary-side-container {
+    height: 100%;
+    padding: 21px;
+
+    & .cart-summary-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        padding-bottom: 12px;
+    }
+}
+
+.cart-side-products-summary-container,
+.cart-side-container,
+.cart-total-side-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-side-container {
+    border-bottom: 1px solid #ccc;
+}
+
+.free {
+    color: #00A650;
+}
+
+.cart-summary-total {
+    font-weight: bold;
+}

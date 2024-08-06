@@ -1,0 +1,123 @@
+.successful-purchase-container {
+    height: 80vh;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.success-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+    background-color: #00A650;
+    color: white;
+    padding-top: 1rem;
+    position: absolute;
+    top: 0;
+}
+
+.success-container .icon-wrapper {
+    background-color: white;
+    padding: 11px 14px;
+    border-radius: 50%;
+    margin-left: 24px;
+}
+
+.success-container .bi {
+    font-size: 2rem;
+    color: #00A650;
+}
+
+.go-to-store-container {
+    width: 40%;
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    z-index: 1;
+    position: relative;
+    margin-top: 10%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-go-to-store-container h3 {
+    text-align: center;
+}
+
+.go-to-store-container .go-to-store-button {
+    margin: 0 auto;
+    margin-bottom: 32px;
+    display: block;
+}
+
+.go-to-store-container .go-to-store-button a {
+    text-decoration: none;
+    color: white;
+}
+
+.success-location-container,
+.arrives-tomorrow-container {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.success-location-container h2,
+.arrives-tomorrow-container p {
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .go-to-store-container {
+        width: 80%;
+    }
+
+    .successful-purchase-container {
+        padding: 10px;
+    }
+
+    .success-container {
+        padding-top: 2rem;
+    }
+
+    .success-container .bi {
+        font-size: 1.5rem;
+    }
+
+    .go-to-store-container .success-go-to-store-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .go-to-store-container .go-to-store-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .go-to-store-container {
+        width: 90%;
+    }
+
+    .success-container {
+        padding-top: 1rem;
+    }
+
+    .success-container .bi {
+        font-size: 1.2rem;
+    }
+
+    .go-to-store-container .success-go-to-store-container h3 {
+        font-size: 1rem;
+    }
+
+    .go-to-store-container .go-to-store-button {
+        font-size: 0.9rem;
+    }
+}

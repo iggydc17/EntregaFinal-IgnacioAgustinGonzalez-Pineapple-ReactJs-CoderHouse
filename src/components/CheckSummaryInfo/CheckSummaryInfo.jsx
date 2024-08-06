@@ -1,28 +1,13 @@
 import { useOrder } from '../../contexts/OrderContext';
-import { useNavigate, Link } from 'react-router-dom';
-import { useState } from 'react';
-import { useCart } from '../../hooks/useCart';
-import { useNotification } from '../../hooks/useNotification';
 import SummarySideInfo from '../SummarySideInfo/SummarySideInfo';
+import { Link } from 'react-router-dom';
 import './CheckSummaryInfo.css';
 
 
 const CheckSummaryInfo = () => {
 
-    const [textButton, setTextButton] = useState("Confirm Purchase");
     const { order } = useOrder();
-    const { clearCart } = useCart();
-    const { setNotification } = useNotification();
-    const navigate = useNavigate();
 
-
-    const handleConfirmPurchase = () => {
-        setTextButton("Loading...")
-        clearCart();
-        setNotification("success", "The order is processing...")
-        setTimeout(() => {
-            navigate("/successful-purchase/");
-        }, 3000);    }
     
     document.title = "Checkout Summary Info - PineApple";
 
@@ -84,13 +69,9 @@ const CheckSummaryInfo = () => {
                         </Link>
                     </div>
                 </div>
-                
-                <div className='cart-form-continue-btn-container check-summary-continue-button'>
-                    <button className='confirm-purchase-button continue-button' onClick={handleConfirmPurchase}>{textButton}</button>
-                </div>
             </div>
             <div className="summary-side-container">
-                <SummarySideInfo />
+                <SummarySideInfo showConfirmButton={true} />
             </div>
         </main>
     );

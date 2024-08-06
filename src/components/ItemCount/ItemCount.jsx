@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import './ItemCount.css';
+import Counter from "../Counter/Counter";
 
 const ItemCount = ({ initialQuantity = 1, name, price, stock, onAdd }) => {
 
@@ -29,11 +30,7 @@ const ItemCount = ({ initialQuantity = 1, name, price, stock, onAdd }) => {
             <p className="counter-product-name">{name}</p>
             <p className='free-shipping'>Free Shipping <i className="bi bi-truck"></i></p>
             <p className="product-stock"> Available stock: {stock}</p>
-            <div className="counter-box">
-                <button onClick={decrement}>-</button>
-                <p className="count-value">{ count }</p>
-                <button onClick={increment}>+</button>
-            </div>
+            <Counter count={count} increment={increment} decrement={decrement}  />
             <h2 className='total'>Total: ${productPrice.toFixed(1)}</h2>
             
             {stock === 0 ? (

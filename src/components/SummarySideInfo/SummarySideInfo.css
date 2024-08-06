@@ -1,6 +1,6 @@
 .summary-side-container {
     position: sticky;
-    width: 35%;
+    width: 44%;
     background-color: #F5F5F5;
     top: 60px;
     bottom: 0;
@@ -16,4 +16,57 @@
         padding-top: 32px;
         padding-bottom: 24px;
     }
+}
+
+.summary-side-info-container {
+    font-size: 1.11rem;
+}
+
+.summary-side-info-container .cart-total-side-container {
+    margin-top: 24px;
+}
+
+.check-summary-continue-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: -100%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.confirm-purchase-button {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background-color: dodgerblue;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; 
+    max-width: 200px;
+    height: 46px;
+}
+
+.confirm-purchase-button.loading {
+    background: linear-gradient(to right, dodgerblue 50%, white 50%);
+    background-size: 200% 100%;
+    animation: loadingAnimation 3s linear forwards;
+    color: white;
+}
+
+.confirm-purchase-button.loading::after {
+    content: "Loading...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }

@@ -14,14 +14,18 @@ export const CartProvider = ({ children }) => {
 
     // Add item to Cart.
     const addItem = (productToAdd) => {
-        if(!isInCart(productToAdd.id)) {
+        if (isInCart(productToAdd.id)) {
+            setCart(prev => 
+                prev.map(prod =>
+                    prod.id === productToAdd.id 
+                    ? { ...prod, quantity: productToAdd.quantity } 
+                    : prod
+                )
+            );
+        } else {
             setCart(prev => [...prev, productToAdd]);
         }
-        else {
-            console.error("The product is already in the Cart.");
-        }
     }
-
     // Remove item from de Cart.
     const removeItem = (id) => {
         const cartUpdated = cart.filter((prod) => prod.id != id)
