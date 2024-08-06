@@ -9,6 +9,11 @@ const CartItem = ({ id, name, image, quantity, price}) => {
 
     const handleRemove = (id) => {
         removeItem(id)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
         setNotification("warning", `${quantity} ${name} has been removed from Cart`);
     }
 

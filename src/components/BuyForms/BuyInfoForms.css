@@ -1,0 +1,120 @@
+.cart-form-main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #EEEEEE;
+    padding: 70px 32px;
+}
+
+.cart-form-container {
+    width: 100%;
+}
+
+.cart-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px 40px;
+
+    & label {
+        font-size: 14px;
+        margin: 0px 0px 6px 6px;
+    }
+
+    & input {
+        width: 44%;
+        height: 42px;
+        font-size: 18px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding-left: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+.cart-form-continue-btn-container {    
+    & .continue-button {
+        font-size: 18px;
+        font-weight: bold;
+        background-color: hsl(211, 100%, 50%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 20px;
+        margin: 24px 0px 24px 0px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: hsl(211, 100%, 40%);
+        }
+
+        &:active {
+            background-color: hsl(211, 100%, 60%);
+        }
+
+    }
+}
+
+.shipping-info-form-container input {
+    width: 90%;
+}
+
+.form-box-container {
+    display: flex;
+    flex-direction: row;
+    gap: 11rem;
+    
+
+    & .form-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card-holder-name-input,
+.card-number-input {
+    width: 52% !important;
+}
+
+.card-type-container {
+    margin-bottom: 24px;
+}
+
+.card-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; 
+    margin-top: 12px;
+
+    & input[type="radio"] {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0px;
+    }
+
+    & .type-card-label {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+    
+}
+
+.choose-payment-p {
+    margin-bottom: 32px;
+}
+
+.expiry-date-input {
+    width: 24.5% !important;
+    padding-right: 12px;
+}
+
+.cvv-input {
+    width: 15% !important;
+    padding-right: 12px;
+}

@@ -51,7 +51,7 @@
 }
 
 .add-to-cart-btn {
-    width: 9rem;
+    width: 12rem;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -62,6 +62,7 @@
     border-radius: 6px;
     margin: 0 auto;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 

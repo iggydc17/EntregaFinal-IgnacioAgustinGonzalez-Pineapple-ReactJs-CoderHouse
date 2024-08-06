@@ -15,6 +15,10 @@ const ItemDetail = ({ id, name, price, stock, year, description, image }) => {
 
         const productObj = { id, name, price, quantity: count}
             addItem(productObj);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
             setNotification("success", `${count} ${name} added to the Cart`);
     }
 

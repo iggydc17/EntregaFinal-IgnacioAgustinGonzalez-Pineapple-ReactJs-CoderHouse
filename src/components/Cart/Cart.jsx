@@ -12,6 +12,10 @@ const Cart = () => {
 
     const handleClearCart = () => {
         clearCart();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         setNotification("warning", "The cart is empty");
     }
     

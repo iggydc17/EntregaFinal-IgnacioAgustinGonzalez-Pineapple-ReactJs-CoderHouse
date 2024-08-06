@@ -30,6 +30,7 @@
         }
 
         &:focus {
+            color: hsla(0, 0%, 100%, 1.8);
             border: 2px solid dodgerblue;
             border-radius: 4px;
             outline: none;

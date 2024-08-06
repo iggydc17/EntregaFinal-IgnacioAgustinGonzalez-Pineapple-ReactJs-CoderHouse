@@ -1,27 +1,43 @@
 import { createContext, useState } from "react";
 
 const Notification = ({ message, severity }) => {
-    const backgroundGround = {
-        success: "#5ED853",
-        danger: "tomato",
-        warning: "darkOrange",
-        default: "#5FBBFF",
+    const styles = {
+        success: {
+            background: "#5ED853",
+            border: "#081211",
+        },
+        danger: {
+            background: "tomato",
+            border: "#55090C",
+        },
+        warning: {
+            background: "#FF9008",
+            border: "#EC4133",
+        },
+        default: {
+            background: "#5FBBFF",
+            border: "#0B0835",
+        },
     };
-
     const notificationStyles = {
         position: "absolute",
-        top: 100,
+        top: 86,
         right: 24,
+        width: "18%",
+        height: "auto",
         fontSize: "16px",
         fontWeight: "bold",
-        backgroundColor: backgroundGround[severity] || backgroundGround.default,
+        lineHeight: "1.5rem",
+        textAlign: "center",
+        backgroundColor: styles[severity]?.background || styles.default.background,
         color: "white",
-        border: "2px solid black",
+        border: `1px solid ${styles[severity]?.border || styles.default.border}`,
         borderRadius: "4px",
-        padding: "14px",
+        padding: "10px 14px",
+        zIndex: 1000,
     };
 
-    if (message === "") return;
+    if (!message) return null;
     return <div style={notificationStyles}>{message}</div>;
 };
 

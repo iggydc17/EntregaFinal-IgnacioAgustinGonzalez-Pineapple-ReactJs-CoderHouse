@@ -1,13 +1,18 @@
 import './SummarySideInfo.css';
 
 
-const SummarySideInfo = (/* { formData, cart, totalQuantity, getTotalPrice } */) => {
+const SummarySideInfo = () => {
 
 
     return (
         <div className='summary-side-info-container'>
-            <h1 className='summary-title'>Summary: </h1>
-
+            <h3 className='summary-title'>Purchase summary: </h3>
+            <p>aksdjkasjdlkasjdlksjkljsad</p>
+            <p>aksdjkasjdlkasjdlksjkljsad</p>
+            <p>aksdjkasjdlkasjdlksjkljsad</p>
+            <p>aksdjkasjdlkasjdlksjkljsad</p>
+            <p>aksdjkasjdlkasjdlksjkljsad</p>
+            <p>aksdjkasjdlkasjdlksjkljsad</p>
         </div>
     );
 }

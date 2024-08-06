@@ -1,0 +1,19 @@
+.summary-side-container {
+    position: sticky;
+    width: 35%;
+    background-color: #F5F5F5;
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 48px;
+    margin-top: -70px;
+    margin-bottom: -70px;
+    margin-right: -32px;
+
+    & .summary-title {
+        border-bottom: 1px solid lightgray;
+        padding-top: 32px;
+        padding-bottom: 24px;
+    }
+}

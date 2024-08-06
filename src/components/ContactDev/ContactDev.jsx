@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
-import './ContactUs.css';
-import { toast } from 'react-toastify';
+import { useNotification } from '../../hooks/useNotification';
+import './ContactDev.css';
 
-const ContactUs = () => {
+const ContactDev = () => {
 
-    const handleSendContactUsForm = (event) => {
+    const { setNotification } = useNotification();
+
+    const handleSendContactDevForm = (event) => {
         event.preventDefault();
-        toast.success("Mail sent successfully! I will get in touch as soon as possible.");
+        setNotification("success", "Mail sent successfully! I will get in touch as soon as possible.");
         setTimeout(() => {
             window.location.href = "https://www.linkedin.com/in/ignacio-agustin-gonzalez-110768270/";
         }, 3000);
@@ -15,19 +17,19 @@ const ContactUs = () => {
     document.title = "Contact Dev - PineApple";
 
     return (
-        <main className='contact-us-container'>
+        <main className='contact-dev-container'>
             <div className='general-container'>
                 
                 <div className="form-container">
-                    <h1 className='contact-us-title'>Send me an email</h1>
+                    <h1 className='contact-dev-title'>Send me an email</h1>
                     <form>
-                        <input className='contact-us-input' type="text" placeholder='Enter your full name' />
-                        <input className='contact-us-input' type="email" placeholder='example@gmail.com'/>
-                        <input className='contact-us-input' type="text" placeholder='Enter a subject conversation' />
-                        <textarea name="message" id="contact-us-textarea" placeholder='Ask me something...'></textarea>
+                        <input className='contact-dev-input' type="text" placeholder='Enter your full name' />
+                        <input className='contact-dev-input' type="email" placeholder='example@gmail.com'/>
+                        <input className='contact-dev-input' type="text" placeholder='Enter a subject conversation' />
+                        <textarea name="message" id="contact-dev-textarea" placeholder='Ask me something...'></textarea>
                         <button
                             type='submit'
-                            onClick={handleSendContactUsForm}
+                            onClick={handleSendContactDevForm}
                             className='send-contact-form-button'>
                             Send
                         </button>
@@ -35,7 +37,7 @@ const ContactUs = () => {
                 </div>
 
                 <div className="contact-info-container">
-                    <h1 className='contact-us-title'>Contact Me</h1>
+                    <h1 className='contact-dev-title'>Contact Me</h1>
                     <div className="contact-info">
                         <div className="contact-logo">
                             <i className="bi bi-geo-alt-fill"></i>
@@ -90,4 +92,4 @@ const ContactUs = () => {
     );
 }
 
-export default ContactUs;
+export default ContactDev;

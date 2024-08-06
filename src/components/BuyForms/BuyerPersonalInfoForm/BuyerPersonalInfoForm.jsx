@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
+import { useNotification } from "../../../hooks/useNotification";
 import SummarySideInfo from "../../SummarySideInfo/SummarySideInfo";
-import { toast } from "react-toastify";
 import '../BuyInfoForms.css';
 
 const BuyerPersonalInfoForm = () => {
 
     const { order, setOrder } = useOrder();
+    const { setNotification } = useNotification();
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -24,7 +25,6 @@ const BuyerPersonalInfoForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Submitting Buyer Personal Info:', formData);
 
         const updatedOrder = {
             ...order,
@@ -32,21 +32,23 @@ const BuyerPersonalInfoForm = () => {
         };
 
         setOrder(updatedOrder);
-
-        console.log('Order after setting personal info:', updatedOrder);
-
-        toast.success("Buyer Info pass successfully!");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        setNotification("success", "Buyer Info pass successfully!");
 
         setTimeout(() => {
             navigate("/shipping-form");
-        }, 1500);
+        }, 3000);
     };
 
     document.title = "Buyer Form - PineApple";
 
     return (
-        <main className="cart-form-container buyer-personal-info-form-container">
-            <h2>Personal Info</h2>
+        <main className="cart-form-main-container buyer-personal-info-form-container">
+            <div className="cart-form-container">
+                <h1 className="cart-form-title">Personal Info</h1>
                 <form className="cart-form buyer-cart-form" onSubmit={handleSubmit}>
                     <label htmlFor="name-input">Name: </label>
                     <input 
@@ -84,12 +86,14 @@ const BuyerPersonalInfoForm = () => {
                         value={formData.email}
                         onChange={handleChange}
                     />
-                    
-                    <button type="submit" className="continue-button">Continue</button>
+                    <div className="cart-form-continue-btn-container">
+                            <button type="submit" className="continue-button">Continue</button>
+                    </div>
                 </form>
-                <div className="summary-side-container">
-                    <SummarySideInfo />
-                </div>
+            </div>
+            <div className="summary-side-container">
+                <SummarySideInfo />
+            </div>
         </main>
     );
 }

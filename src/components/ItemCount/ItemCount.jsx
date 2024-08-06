@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import './ItemCount.css';
 
 const ItemCount = ({ initialQuantity = 1, name, price, stock, onAdd }) => {
@@ -40,13 +39,12 @@ const ItemCount = ({ initialQuantity = 1, name, price, stock, onAdd }) => {
             {stock === 0 ? (
                 <p className="sold-out">SOLD OUT</p>
             ) : (
-                <Link 
-                    to='/cart/'
+                <button 
                     onClick={ () => onAdd(count) } 
                     className='add-to-cart-btn'
                 > 
                     Add to Cart &nbsp; <i className="bi bi-cart"></i>
-                </Link>
+                </button>
             )}
         </div>
     );

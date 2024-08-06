@@ -10,7 +10,7 @@ import PaymentForm from './components/BuyForms/PaymentForm/PaymentForm';
 import CheckSummaryInfo from './components/CheckSummaryInfo/CheckSummaryInfo';
 import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase';
 import AboutUs from './components/AboutUs/AboutUs';
-import ContactUs from './components/ContactUs/ContactUs';
+import ContactDev from './components/ContactDev/ContactDev';
 import Footer from "./components/Footer/Footer";
 import Missing404 from "./components/Missing 404/Missing404";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -41,7 +41,7 @@ function App() {
                 <Route exact path="/check-summary-info/" element={<CheckSummaryInfo />} />
                 <Route exact path="/successful-purchase/" element={<SuccessfulPurchase />} />
                 <Route exact path="/aboutUs/" element={<AboutUs />} />
-                <Route exact path="/contactDev/" element={<ContactUs />} />
+                <Route exact path="/contactDev/" element={<ContactDev />} />
                 <Route path="*" element={<Missing404 />} />
               </Routes>
             </OrderProvider>
