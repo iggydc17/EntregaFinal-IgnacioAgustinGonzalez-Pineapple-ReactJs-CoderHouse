@@ -1,7 +1,65 @@
 .check-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 87%;
     background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 24px;
+    padding: 16px 32px;
+
+    & a {
+        color:#0076F4;
+        font-size: 17px;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
+
+.check-icon {
+    background-color:#0076F4;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50%;
+
+    & .bi {
+        font-size: 2rem;
+    }
+}
+
+.check-info-container {
+    margin-left: -6rem;
+
+    & .check-zip-code {
+        font-size: 1.25rem;
+    }
+
+    & .check-info-gray {
+        font-size: 15px;
+        line-height: 4px;
+        color: #555;
+    }
+
+    & .check-name-number {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.check-payment-image {
+    margin-bottom: -4px;
+}
+
+.receives-quantity {
+    font-size: 1.25rem;
+    margin-left: -8rem;
+}
+
+.check-payment-container {
+    color: #555;
+    margin-left: -14rem;
+}
+

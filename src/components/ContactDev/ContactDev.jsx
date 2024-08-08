@@ -1,17 +1,48 @@
 import { Link } from 'react-router-dom';
 import { useNotification } from '../../hooks/useNotification';
+import { useState } from 'react';
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
+
+
 import './ContactDev.css';
 
 const ContactDev = () => {
-
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
     const { setNotification } = useNotification();
+    const form = useRef();
 
     const handleSendContactDevForm = (event) => {
         event.preventDefault();
-        setNotification("success", "Mail sent successfully! I will get in touch as soon as possible.");
-        setTimeout(() => {
-            window.location.href = "https://www.linkedin.com/in/ignacio-agustin-gonzalez-110768270/";
-        }, 3000);
+        
+        const serviceId = "service_na7wbck";
+        const templateId = "template_313kwoq";
+        const publicKey = "ku9vHrA_hzRkxb4P9";
+        
+        const templateParams = {
+            user_name: "Ignacio Gonzalez",
+            from_email: email,
+            subject: subject,
+            to_name: fullName,
+            message: message
+        };
+
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+            .then(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });        
+                setNotification("success", "Email sent successfully");
+                setTimeout(() => {
+                    window.location.href = "https://www.linkedin.com/in/ignacio-agustin-gonzalez-110768270/";
+                }, 3000);
+            }, (error) => {
+                setNotification("danger", error.text);
+            });
     };
 
     document.title = "Contact Dev - PineApple";
@@ -22,16 +53,43 @@ const ContactDev = () => {
                 
                 <div className="form-container">
                     <h1 className='contact-dev-title'>Send me an email</h1>
-                    <form>
-                        <input className='contact-dev-input' type="text" placeholder='Enter your full name' />
-                        <input className='contact-dev-input' type="email" placeholder='example@gmail.com'/>
-                        <input className='contact-dev-input' type="text" placeholder='Enter a subject conversation' />
-                        <textarea name="message" id="contact-dev-textarea" placeholder='Ask me something...'></textarea>
+                    <form ref={form} onSubmit={handleSendContactDevForm} className='email-form'>
+                        <input 
+                            className='contact-dev-input'
+                            type="text"
+                            name='user_name'
+                            placeholder='Enter your full name'
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                        />
+                        <input
+                            className='contact-dev-input'
+                            type="email"
+                            name='from_email'
+                            placeholder='example@gmail.com'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <input
+                            className='contact-dev-input'
+                            type="text"
+                            name='from_subject'
+                            placeholder='Enter a subject conversation'
+                            value={subject}
+                            onChange={(e) => setSubject(e.target.value)}
+                        />
+                        <textarea
+                            name="message"
+                            id="contact-dev-textarea"
+                            placeholder='Ask me something...'
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        ></textarea>
                         <button
                             type='submit'
                             onClick={handleSendContactDevForm}
                             className='send-contact-form-button'>
-                            Send
+                                Send Email
                         </button>
                     </form>
                 </div>

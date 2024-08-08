@@ -34,7 +34,7 @@
 .lineup-title {
     font-size: 56px;
     margin: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 .items-list {
@@ -65,7 +65,7 @@
     & img {
         width: 17em;
         height: 24em;
-        object-fit: contain;
+        object-fit: scale-down;
     }
 
     & a {

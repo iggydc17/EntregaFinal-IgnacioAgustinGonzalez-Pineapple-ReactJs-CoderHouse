@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../../../hooks/useCart";
 import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
 import { db } from "../../../libraries/firebase";
@@ -10,6 +10,16 @@ import '../BuyInfoForms.css';
 
 
 const PaymentInfo = () => {
+    
+    const [orderCreated, setOrderCreated] = useState(false);
+    const [fetchError, setFetchError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const { order, setOrder } = useOrder();
+    const { cart, totalQuantity, getTotalPrice } = useCart();
+    const { setNotification } = useNotification();
+    const navigate = useNavigate();    
+    const total = getTotalPrice();
+    
     const [formData, setFormData] = useState({
         cardholderName: '',
         cardType: 'Visa',
@@ -17,24 +27,27 @@ const PaymentInfo = () => {
         expiryDate: '',
         cvv: ''
     });
-
-    const [orderCreated, setOrderCreated] = useState(false);
-    const [fetchError, setFetchError] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const { order, setOrder } = useOrder();
-    const { cart, totalQuantity, getTotalPrice } = useCart();
-    const { setNotification } = useNotification();
-    const navigate = useNavigate();
-
-    const total = getTotalPrice();
+    
+    useEffect(() => {
+        const savedData = localStorage.getItem('paymentInfo');
+        if (savedData) {
+            setFormData(JSON.parse(savedData));
+        }
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        localStorage.setItem('paymentInfo', JSON.stringify({ ...formData, [name]: value }));
     };
 
     const handleOrderGeneration = async (e) => {
         e.preventDefault();
+
+        if (!formData.cardholderName || !formData.cardNumber || !formData.expiryDate || !formData.cvv) {
+            setNotification("danger", "Please fill in all fields");
+            return;
+        }
 
         const updatedOrder = {
             ...order,
@@ -94,7 +107,7 @@ const PaymentInfo = () => {
                     navigate("/check-summary-info/");
                 }, 3000);            } 
             else {
-                setNotification("error", "Product out of stock.");
+                setNotification("danger", "Product out of stock.");
             }
         } catch (error) {
             setFetchError(error);
@@ -124,7 +137,7 @@ const PaymentInfo = () => {
                         name="cardholderName"
                         className="card-holder-name-input"
                         id="cardholder-name"
-                        placeholder="John Doe"
+                        placeholder="Card holder's name"
                         value={formData.cardholderName}
                         onChange={handleChange}
                     />

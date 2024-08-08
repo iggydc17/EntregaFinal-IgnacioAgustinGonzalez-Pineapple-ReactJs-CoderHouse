@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
 import { useNotification } from "../../../hooks/useNotification";
@@ -18,13 +18,27 @@ const BuyerPersonalInfoForm = () => {
         email: ''
     });
 
+    useEffect(() => {
+        const savedData = localStorage.getItem('buyerPersonalInfo');
+        if (savedData) {
+            setFormData(JSON.parse(savedData));
+        }
+    }, []);
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        localStorage.setItem('buyerPersonalInfo', JSON.stringify({ ...formData, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!formData.name || !formData.lastName || !formData.phoneNumber || !formData.email) {
+            setNotification("danger", "Please fill in all fields");
+            return;
+        }
+
 
         const updatedOrder = {
             ...order,

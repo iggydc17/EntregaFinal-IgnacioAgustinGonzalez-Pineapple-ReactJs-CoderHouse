@@ -17,11 +17,16 @@ const SummarySideInfo = ({ showConfirmButton }) => {
 
     const handleConfirmPurchase = () => {
         setIsLoading(true);
-        setTextButton("Loading...")
-        clearCart();
-        setNotification("success", "The order is processing...")
+        setTextButton("Loading...");
+
         setTimeout(() => {
             navigate("/successful-purchase/");
+            clearCart();
+            localStorage.removeItem('cart');
+            localStorage.removeItem('buyerPersonalInfo');
+            localStorage.removeItem('shippingInfo');
+            localStorage.removeItem('paymentInfo');
+            setNotification("success", "The order is processing...");
         }, 3000);
     }
 

@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
-import { useOrder } from "../../contexts/OrderContext";
 import './SuccessfulPurchase.css';
 
 const SuccessfulPurchase = () => {
-    const { order } = useOrder();
     document.title = "Successful Purchase - PineApple";
 
     return (
         <main className="successful-purchase-container">
             <div className="go-to-store-container">
                 <div className="success-location-container">
-                    <h2>Shipment to {order.shippingInfo.streetNumber} {order.shippingInfo.street}</h2>
+                    <h2>Shipment is on the way</h2>
                 </div>
                 <div className="arrives-tomorrow-container">
                     <p>Arrives at your home tomorrow</p>

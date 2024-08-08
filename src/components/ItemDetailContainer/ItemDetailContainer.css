@@ -30,7 +30,7 @@
 .product-image {
     width: 300px;
     height: 380px;
-    object-fit: contain;
+    object-fit: scale-down;
 }
 
 .product-info-box {

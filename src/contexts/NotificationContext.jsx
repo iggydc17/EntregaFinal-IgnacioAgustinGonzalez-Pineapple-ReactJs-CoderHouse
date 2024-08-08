@@ -3,22 +3,24 @@ import { createContext, useState } from "react";
 const Notification = ({ message, severity }) => {
     const styles = {
         success: {
-            background: "#5ED853",
-            border: "#081211",
+            background: "rgba(94, 216, 53, 0.8)",
+            border: "rgba(8, 18, 17, 0.8)",
         },
         danger: {
-            background: "tomato",
-            border: "#55090C",
+            background: "rgba(255, 72, 52, 0.8)",
+            border: "rgba(85, 9, 12, 0.8)",
         },
         warning: {
-            background: "#FF9008",
-            border: "#EC4133",
+            background: "rgba(255, 144, 5, 0.8)",
+            border: "rgba(255, 144, 1, 0.8)",
         },
         default: {
-            background: "#5FBBFF",
-            border: "#0B0835",
+            background: "rgba(95, 187, 255, 0.8)",
+            border: "rgba(11, 8, 53, 0.8)",
         },
     };
+    
+    
     const notificationStyles = {
         position: "absolute",
         top: 86,

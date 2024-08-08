@@ -14,6 +14,11 @@ const ItemDetail = ({ id, name, price, stock, year, description, image }) => {
     const handleAddProductToCart = (count) => {
 
         const productObj = { id, name, price, image, stock, quantity: count}
+
+            const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+            const updatedCart = [...currentCart, productObj];
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            
             addItem(productObj);
             window.scrollTo({
                 top: 0,

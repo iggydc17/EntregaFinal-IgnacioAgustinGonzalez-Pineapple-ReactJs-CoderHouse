@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOrder } from "../../../contexts/OrderContext";
 import { useNotification } from "../../../hooks/useNotification";
@@ -7,6 +7,10 @@ import '../BuyInfoForms.css';
 
 const ShippingForm = () => {
 
+    
+    const { order, setOrder } = useOrder();
+    const { setNotification } = useNotification();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         country: "",
         state: "",
@@ -14,19 +18,30 @@ const ShippingForm = () => {
         street: "",
         streetNumber: "",
         zipCode: ""
-    })
+    });
 
-    const { order, setOrder } = useOrder();
-    const { setNotification } = useNotification();
-    const navigate = useNavigate();
-
+    useEffect(() => {
+        const savedData = localStorage.getItem('shippingInfo');
+        if (savedData) {
+            setFormData(JSON.parse(savedData));
+        }
+    }, []);
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        localStorage.setItem('shippingInfo', JSON.stringify({ ...formData, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!formData.country || !formData.state || !formData.city || !formData.street || 
+            !formData.streetNumber || !formData.zipCode) {
+                setNotification("danger", "Please fill in all fields");
+                return;
+            }
+
 
         const updatedOrder = {
             ...order,

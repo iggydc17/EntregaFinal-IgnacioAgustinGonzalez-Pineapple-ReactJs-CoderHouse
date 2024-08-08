@@ -11,13 +11,16 @@ const Cart = () => {
     const { setNotification } = useNotification();
     const total = getTotalPrice();
 
-
-    const handleClearCart = () => {
-        clearCart();
+    const scrollUp = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
+    }
+
+    const handleClearCart = () => {
+        clearCart();
+        scrollUp();
         setNotification("warning", "The cart is empty");
     }
     
@@ -54,7 +57,8 @@ const Cart = () => {
                             </button>
                             <Link 
                                 to={"/buyer-personal-info-form/"}
-                                className='go-to-store-button continue-button' >
+                                className='go-to-store-button continue-button'
+                                onClick={scrollUp} >
                                     Continue
                             </Link>
                         </div>
