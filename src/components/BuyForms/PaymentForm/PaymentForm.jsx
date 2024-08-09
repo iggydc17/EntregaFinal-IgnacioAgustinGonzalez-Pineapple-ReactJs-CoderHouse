@@ -27,6 +27,14 @@ const PaymentInfo = () => {
         expiryDate: '',
         cvv: ''
     });
+
+    const [errors, setErrors] = useState({
+        cardholderName: '',
+        cardType: 'Visa',
+        cardNumber: '',
+        expiryDate: '',
+        cvv: ''
+    })
     
     useEffect(() => {
         const savedData = localStorage.getItem('paymentInfo');
@@ -34,6 +42,49 @@ const PaymentInfo = () => {
             setFormData(JSON.parse(savedData));
         }
     }, []);
+
+    const scrollUp = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.cardholderName) {
+            newErrors.cardholderName = "Cardholder name is required.";
+        } else if (!/^[a-zA-Z\s]+$/.test(formData.cardholderName)) {
+            newErrors.cardholderName = "Cardholder name can only contain letters.";
+        }
+
+        if (!formData.cardNumber) {
+            newErrors.cardNumber = "Card number is required.";
+        } else if (!/^\d{16}$/.test(formData.cardNumber.replace(/\s+/g, ''))) {
+            newErrors.cardNumber = "Card number must be 16 digits.";
+        }
+
+        if (!formData.expiryDate) {
+            newErrors.expiryDate = "Expiry date is required.";
+        } else if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(formData.expiryDate)) {
+            newErrors.expiryDate = "Expiry date must be in MM/YY format.";
+        }
+
+        if (!formData.cvv) {
+            newErrors.cvv = "CVV is required.";
+        } else if (!/^\d{3,4}$/.test(formData.cvv)) {
+            newErrors.cvv = "CVV must be 3 or 4 digits.";
+        }
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
+            scrollUp();
+        }
+
+        return Object.keys(newErrors).length === 0;
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -44,8 +95,8 @@ const PaymentInfo = () => {
     const handleOrderGeneration = async (e) => {
         e.preventDefault();
 
-        if (!formData.cardholderName || !formData.cardNumber || !formData.expiryDate || !formData.cvv) {
-            setNotification("danger", "Please fill in all fields");
+        if (!validateForm()) {
+            setNotification("danger", "Please fix the errors in the form");
             return;
         }
 
@@ -55,6 +106,7 @@ const PaymentInfo = () => {
         };
 
         setOrder(updatedOrder);
+        scrollUp();
         setIsLoading(true);
 
         try {
@@ -97,10 +149,7 @@ const PaymentInfo = () => {
                 const orderAdded = await addDoc(orderRef, objectOrder);
                 console.log(`The order's id is: ${orderAdded.id}\n ${orderCreated}`);
                 setOrderCreated(true);
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });    
+                scrollUp();   
                 setNotification("success", "The order has been created successfully");
 
                 setTimeout(() => {
@@ -135,12 +184,15 @@ const PaymentInfo = () => {
                     <input
                         type="text"
                         name="cardholderName"
+                        style={{ border: errors.cardholderName ? '2px solid tomato' : formData.cardholderName ? '2px solid #21B531' : '' }}
                         className="card-holder-name-input"
                         id="cardholder-name"
                         placeholder="Card holder's name"
                         value={formData.cardholderName}
                         onChange={handleChange}
                     />
+                    {errors.cardholderName && <span className="error-msg">{errors.cardholderName}</span>}
+                    
                     <label className="choose-payment-p">Choose Payment Card Type:</label>
                     <div className="card-type-container">
                         <div className="card-type">
@@ -166,16 +218,20 @@ const PaymentInfo = () => {
                             <label className="type-card-label" htmlFor="mastercard">Mastercard</label>
                         </div>
                     </div>
+                    
                     <label htmlFor="card-number-input">Card Number:</label>
                     <input
                         name="cardNumber"
                         type="text"
                         id="card-number-input"
+                        style={{ border: errors.cardNumber ? '2px solid tomato' : formData.cardNumber ? '2px solid #21B531' : '' }}
                         className="card-number-input"
                         placeholder="1111-1111-1111-1111"
                         value={formData.cardNumber}
                         onChange={handleChange}
                     />
+                    {errors.cardNumber && <span className="error-msg">{errors.cardNumber}</span>}
+                    
                     <div className="form-box-container">
                         <div className="form-box">
                             <label htmlFor="expiry-date">Expiry Date:</label>
@@ -184,10 +240,12 @@ const PaymentInfo = () => {
                                 type="text"
                                 className="expiry-date-input"
                                 id="expiry-date"
+                                style={{ border: errors.expiryDate ? '2px solid tomato' : formData.expiryDate ? '2px solid #21B531' : '' }}
                                 placeholder="MM/YY"
                                 value={formData.expiryDate}
                                 onChange={handleChange}
                             />
+                            {errors.expiryDate && <span className="error-msg">{errors.expiryDate}</span>}
                         </div>
                         <div className="form-box">
                             <label htmlFor="cvv" className="cvv-label">CVV:</label>
@@ -196,10 +254,12 @@ const PaymentInfo = () => {
                                 type="text"
                                 className="cvv-input"
                                 id="cvv"
+                                style={{ border: errors.cvv ? '2px solid tomato' : formData.cvv ? '2px solid #21B531' : '' }}
                                 placeholder="123"
                                 value={formData.cvv}
                                 onChange={handleChange}
                             />
+                        {errors.cvv && <span className="error-msg">{errors.cvv}</span>}
                         </div>
                     </div>
                     <div className='cart-form-continue-btn-container generate-order-button-container'>

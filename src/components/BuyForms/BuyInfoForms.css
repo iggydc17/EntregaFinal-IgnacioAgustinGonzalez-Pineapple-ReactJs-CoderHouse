@@ -118,3 +118,19 @@
     width: 15% !important;
     padding-right: 12px;
 }
+
+.cart-form input {
+    border: 2px solid tomato;
+}
+
+.shipping-cart-form .error-msg,
+.payment-cart-form .error-msg {
+    margin-bottom: 12px;
+}
+
+.error-msg {
+    color: tomato;
+    font-size: 0.875rem; 
+    margin-top: -12px;
+    margin-left: 12px;
+}

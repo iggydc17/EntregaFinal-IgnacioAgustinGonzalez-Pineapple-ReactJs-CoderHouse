@@ -1,9 +1,28 @@
 import { useOrder } from '../../contexts/OrderContext';
 import SummarySideInfo from '../SummarySideInfo/SummarySideInfo';
 import { Link } from 'react-router-dom';
-import './CheckSummaryInfo.css';
 import { useCart } from '../../hooks/useCart';
+import './CheckSummaryInfo.css';
 
+// Format phoneNumber
+const formatPhoneNumber = (phoneNumber) => {
+    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{2})(\d{4})(\d{4})$/);
+    if (match) {
+        return `${match[1]}-${match[2]}-${match[3]}`;
+    }
+    return phoneNumber;
+};
+
+// Format card number 
+const formatCardNumber = (cardNumber) => {
+    const cleaned = ('' + cardNumber).replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{4})(\d{4})(\d{4})(\d{4})$/);
+    if (match) {
+        return `${match[1]}-${match[2]}-${match[3]}-${match[4]}`;
+    }
+    return cardNumber;
+};
 
 const CheckSummaryInfo = () => {
 
@@ -16,6 +35,9 @@ const CheckSummaryInfo = () => {
     const mastercardLogoImg = "../../../public/img/payment-logos/mastecard-logo.webp"
 
     const typePaymentImg = order.paymentInfo.cardType === "Visa" ? visaLogoImg : mastercardLogoImg;
+
+    const formattedCardNumber = formatCardNumber(order.paymentInfo.cardNumber);
+    const formattedPhoneNumber = formatPhoneNumber(order.personalInfo.phoneNumber);
     
     document.title = "Checkout Summary Info - PineApple";
 
@@ -38,7 +60,7 @@ const CheckSummaryInfo = () => {
                             </p>
                             <div className="check-name-number">
                                 <p>{order.personalInfo.name} {order.personalInfo.lastName}</p>
-                                <p>&nbsp;| {order.personalInfo.phoneNumber}</p>
+                                <p>&nbsp;| {formattedPhoneNumber}</p>
                             </div>
                         </div>
                     </div>
@@ -73,7 +95,7 @@ const CheckSummaryInfo = () => {
                         <img src={typePaymentImg} alt={order.paymentInfo.cardType} className='check-payment-image' />
                     </div>
                     <div className="check-info check-payment-container">
-                        <p className='check-card-number'>Card number: {order.paymentInfo.cardNumber}</p>
+                        <p className='check-card-number'>Card number: {formattedCardNumber}</p>
                         <p className='check-card-holder-name'>Card holder: {order.paymentInfo.cardholderName}</p>
                     </div> 
                     <div className="choose-other-container">

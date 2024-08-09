@@ -3,8 +3,6 @@ import { useNotification } from '../../hooks/useNotification';
 import { useState } from 'react';
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
-
-
 import './ContactDev.css';
 
 const ContactDev = () => {
@@ -12,11 +10,55 @@ const ContactDev = () => {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
+    const [errors, setErrors] = useState({});
     const { setNotification } = useNotification();
     const form = useRef();
 
+
+    const scrollUp = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!fullName) {
+            newErrors.fullName = "Full name is required.";
+        }
+
+        if (!email) {
+            newErrors.email = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            newErrors.email = "Email address is invalid.";
+        }
+
+        if (!subject) {
+            newErrors.subject = "Subject is required.";
+        }
+
+        if (!message) {
+            newErrors.message = "Message is required.";
+        }
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
+            scrollUp();
+        }
+
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleSendContactDevForm = (event) => {
         event.preventDefault();
+        
+        if (!validateForm()) {
+            setNotification("danger", "Please fix the errors in the form.");
+            return;
+        }
         
         const serviceId = "service_na7wbck";
         const templateId = "template_313kwoq";
@@ -32,10 +74,7 @@ const ContactDev = () => {
 
         emailjs.sendForm(serviceId, templateId, form.current, publicKey)
             .then(() => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });        
+                scrollUp();     
                 setNotification("success", "Email sent successfully");
                 setTimeout(() => {
                     window.location.href = "https://www.linkedin.com/in/ignacio-agustin-gonzalez-110768270/";
@@ -60,8 +99,11 @@ const ContactDev = () => {
                             name='user_name'
                             placeholder='Enter your full name'
                             value={fullName}
+                            style={{ border: errors.fullName ? '2px solid tomato' : '' }}
                             onChange={(e) => setFullName(e.target.value)}
                         />
+                        {errors.fullName && <span className="error-msg">{errors.fullName}</span>}
+
                         <input
                             className='contact-dev-input'
                             type="email"
@@ -69,7 +111,10 @@ const ContactDev = () => {
                             placeholder='example@gmail.com'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            style={{ border: errors.email ? '2px solid tomato' : '' }}
                         />
+                        {errors.email && <span className="error-msg">{errors.email}</span>}
+
                         <input
                             className='contact-dev-input'
                             type="text"
@@ -77,14 +122,20 @@ const ContactDev = () => {
                             placeholder='Enter a subject conversation'
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
+                            style={{ border: errors.subject ? '2px solid tomato' : '' }}
                         />
+                        {errors.subject && <span className="error-msg">{errors.subject}</span>}
+
                         <textarea
                             name="message"
                             id="contact-dev-textarea"
                             placeholder='Ask me something...'
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
+                            style={{ border: errors.message ? '2px solid tomato' : '' }}
                         ></textarea>
+                        {errors.message && <span className="error-msg">{errors.message}</span>}
+
                         <button
                             type='submit'
                             onClick={handleSendContactDevForm}

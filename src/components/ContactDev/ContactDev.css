@@ -111,3 +111,7 @@
     border-radius: 50%;
     margin-right: 20px;
 }
+
+.email-form .error-msg {
+    margin-bottom: 12px;
+}

@@ -31,7 +31,7 @@
 }
 
 .check-info-container {
-    margin-left: -6rem;
+    margin-left: -12rem;
 
     & .check-zip-code {
         font-size: 1.25rem;
@@ -55,10 +55,11 @@
 
 .receives-quantity {
     font-size: 1.25rem;
-    margin-left: -8rem;
+    margin-left: -6rem;
 }
 
 .check-payment-container {
+    font-weight: bold;
     color: #555;
     margin-left: -14rem;
 }
