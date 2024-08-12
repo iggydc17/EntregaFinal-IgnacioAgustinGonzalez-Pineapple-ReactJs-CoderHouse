@@ -1,5 +1,18 @@
 # PineApple E-commerce
 
+VITE_APIKEY=AIzaSyAAWoaeNSWXh9x_MaUUk1SR9ZE_M2EzDDM
+
+VITE_AUTHDOMAIN=pineapple-67f51.firebaseapp.com
+
+VITE_PROJECTID=pineapple-67f51
+
+VITE_STORAGEBUCKET=pineapple-67f51.appspot.com
+
+VITE_MESSAGEINGSENDERID=660381166991
+
+VITE_APPID=1:660381166991:web:89a33406ae62a754b0affa
+
+
 PineApple is an online store offering a wide range of Apple products, including Macs, iPads, iPhones, Vision Pro, AirPods, and accessories. The web application, built with React JS, provides a seamless and user-friendly shopping experience, allowing users to explore products, manage their shopping cart, and complete purchases effortlessly.
 
 ## Features
